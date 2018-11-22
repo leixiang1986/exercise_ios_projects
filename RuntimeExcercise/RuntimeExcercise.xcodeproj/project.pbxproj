@@ -15,6 +15,10 @@
 		D309911121A6A1AD00564127 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D309911021A6A1AD00564127 /* main.m */; };
 		D309911B21A6A1AD00564127 /* RuntimeExcerciseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D309911A21A6A1AD00564127 /* RuntimeExcerciseUITests.m */; };
 		D309912721A6A1D800564127 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = D309912521A6A1D800564127 /* CustomView.m */; };
+		D309912A21A6A6D000564127 /* CategoryObj.m in Sources */ = {isa = PBXBuildFile; fileRef = D309912921A6A6D000564127 /* CategoryObj.m */; };
+		D309912D21A6A6F500564127 /* CategoryObj+Test1.m in Sources */ = {isa = PBXBuildFile; fileRef = D309912C21A6A6F500564127 /* CategoryObj+Test1.m */; };
+		D309913021A6A71F00564127 /* CategoryObj+Test2.m in Sources */ = {isa = PBXBuildFile; fileRef = D309912F21A6A71F00564127 /* CategoryObj+Test2.m */; };
+		D309913321A6A90E00564127 /* SubCategoryObj.m in Sources */ = {isa = PBXBuildFile; fileRef = D309913221A6A90E00564127 /* SubCategoryObj.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,14 @@
 		D309911C21A6A1AD00564127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D309912521A6A1D800564127 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 		D309912621A6A1D800564127 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		D309912821A6A6D000564127 /* CategoryObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryObj.h; sourceTree = "<group>"; };
+		D309912921A6A6D000564127 /* CategoryObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryObj.m; sourceTree = "<group>"; };
+		D309912B21A6A6F500564127 /* CategoryObj+Test1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CategoryObj+Test1.h"; sourceTree = "<group>"; };
+		D309912C21A6A6F500564127 /* CategoryObj+Test1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CategoryObj+Test1.m"; sourceTree = "<group>"; };
+		D309912E21A6A71F00564127 /* CategoryObj+Test2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CategoryObj+Test2.h"; sourceTree = "<group>"; };
+		D309912F21A6A71F00564127 /* CategoryObj+Test2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CategoryObj+Test2.m"; sourceTree = "<group>"; };
+		D309913121A6A90E00564127 /* SubCategoryObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubCategoryObj.h; sourceTree = "<group>"; };
+		D309913221A6A90E00564127 /* SubCategoryObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubCategoryObj.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +102,14 @@
 				D309910221A6A1AC00564127 /* AppDelegate.m */,
 				D309910421A6A1AC00564127 /* ViewController.h */,
 				D309910521A6A1AC00564127 /* ViewController.m */,
+				D309912821A6A6D000564127 /* CategoryObj.h */,
+				D309912921A6A6D000564127 /* CategoryObj.m */,
+				D309913121A6A90E00564127 /* SubCategoryObj.h */,
+				D309913221A6A90E00564127 /* SubCategoryObj.m */,
+				D309912B21A6A6F500564127 /* CategoryObj+Test1.h */,
+				D309912C21A6A6F500564127 /* CategoryObj+Test1.m */,
+				D309912E21A6A71F00564127 /* CategoryObj+Test2.h */,
+				D309912F21A6A71F00564127 /* CategoryObj+Test2.m */,
 				D309910721A6A1AC00564127 /* Main.storyboard */,
 				D309910A21A6A1AD00564127 /* Assets.xcassets */,
 				D309910C21A6A1AD00564127 /* LaunchScreen.storyboard */,
@@ -209,8 +229,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D309910621A6A1AC00564127 /* ViewController.m in Sources */,
+				D309912D21A6A6F500564127 /* CategoryObj+Test1.m in Sources */,
+				D309912A21A6A6D000564127 /* CategoryObj.m in Sources */,
 				D309912721A6A1D800564127 /* CustomView.m in Sources */,
 				D309911121A6A1AD00564127 /* main.m in Sources */,
+				D309913021A6A71F00564127 /* CategoryObj+Test2.m in Sources */,
+				D309913321A6A90E00564127 /* SubCategoryObj.m in Sources */,
 				D309910321A6A1AC00564127 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
