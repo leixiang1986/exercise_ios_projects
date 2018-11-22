@@ -1,9 +1,0 @@
-/* 
-  InfoPlist.strings
-  Localization
-
-  Created by leixiang on 2018/11/22.
-  Copyright © 2018年 admin. All rights reserved.
-*/
-NSPhotoLibraryUsageDescription="\"测试\" 想使用你的相册!";
-CFBundleDisplayName="国际化";
