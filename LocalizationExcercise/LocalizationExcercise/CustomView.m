@@ -23,7 +23,7 @@
     NSLog(@"%s",__func__);
 }
 
-- (void)didMoveToSuperview {
+- (void)didMoveToSuperview {那个
     NSLog(@"%s",__func__);
 }
 
