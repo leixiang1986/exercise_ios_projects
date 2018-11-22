@@ -12,6 +12,7 @@
 #import "DTLanguageTools.h"
 #import <objc/message.h>
 #import "CustomView.h"
+#import "UILabel+LXLocalize.h"
 /**
  实现过程:
  一，国际化功能实现
@@ -37,9 +38,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     object_setClass(self.view, [CustomView class]);
+//    self.label.text = NSLocalizedString(@"viewController.test", nil);
+    [self.label localizaedString:@"viewController.test"];
     [self reloadLabel];
     SEL selector = NSSelectorFromString(@"hhh");
     [self.view performSelector:selector];
+//    NSLocalizedString(<#key#>, <#comment#>)
 //    UILabel *label = [[UILabel alloc] init];
 //
 //    UIButton *button;
@@ -54,6 +58,7 @@
     [self reloadLabel];
     
 }
+
 - (IBAction)switchToEnglish:(id)sender {
     [[DTLanguageTools shareManager] setLanguageType:(DTLanguageType_en)];
     [self reloadLabel];

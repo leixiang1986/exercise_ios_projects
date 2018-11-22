@@ -19,6 +19,9 @@
 		D309912D21A6A6F500564127 /* CategoryObj+Test1.m in Sources */ = {isa = PBXBuildFile; fileRef = D309912C21A6A6F500564127 /* CategoryObj+Test1.m */; };
 		D309913021A6A71F00564127 /* CategoryObj+Test2.m in Sources */ = {isa = PBXBuildFile; fileRef = D309912F21A6A71F00564127 /* CategoryObj+Test2.m */; };
 		D309913321A6A90E00564127 /* SubCategoryObj.m in Sources */ = {isa = PBXBuildFile; fileRef = D309913221A6A90E00564127 /* SubCategoryObj.m */; };
+		D309913621A6C8A900564127 /* CategoryObj+Exchange1.m in Sources */ = {isa = PBXBuildFile; fileRef = D309913521A6C8A900564127 /* CategoryObj+Exchange1.m */; };
+		D309913921A6C8B400564127 /* CategoryObj+Exchange2.m in Sources */ = {isa = PBXBuildFile; fileRef = D309913821A6C8B400564127 /* CategoryObj+Exchange2.m */; };
+		D309913C21A6C97500564127 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = D309913B21A6C97500564127 /* NSObject+Runtime.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,12 @@
 		D309912F21A6A71F00564127 /* CategoryObj+Test2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CategoryObj+Test2.m"; sourceTree = "<group>"; };
 		D309913121A6A90E00564127 /* SubCategoryObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubCategoryObj.h; sourceTree = "<group>"; };
 		D309913221A6A90E00564127 /* SubCategoryObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubCategoryObj.m; sourceTree = "<group>"; };
+		D309913421A6C8A900564127 /* CategoryObj+Exchange1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CategoryObj+Exchange1.h"; sourceTree = "<group>"; };
+		D309913521A6C8A900564127 /* CategoryObj+Exchange1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CategoryObj+Exchange1.m"; sourceTree = "<group>"; };
+		D309913721A6C8B400564127 /* CategoryObj+Exchange2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CategoryObj+Exchange2.h"; sourceTree = "<group>"; };
+		D309913821A6C8B400564127 /* CategoryObj+Exchange2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CategoryObj+Exchange2.m"; sourceTree = "<group>"; };
+		D309913A21A6C97500564127 /* NSObject+Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
+		D309913B21A6C97500564127 /* NSObject+Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +111,8 @@
 				D309910221A6A1AC00564127 /* AppDelegate.m */,
 				D309910421A6A1AC00564127 /* ViewController.h */,
 				D309910521A6A1AC00564127 /* ViewController.m */,
+				D309913A21A6C97500564127 /* NSObject+Runtime.h */,
+				D309913B21A6C97500564127 /* NSObject+Runtime.m */,
 				D309912821A6A6D000564127 /* CategoryObj.h */,
 				D309912921A6A6D000564127 /* CategoryObj.m */,
 				D309913121A6A90E00564127 /* SubCategoryObj.h */,
@@ -110,6 +121,10 @@
 				D309912C21A6A6F500564127 /* CategoryObj+Test1.m */,
 				D309912E21A6A71F00564127 /* CategoryObj+Test2.h */,
 				D309912F21A6A71F00564127 /* CategoryObj+Test2.m */,
+				D309913421A6C8A900564127 /* CategoryObj+Exchange1.h */,
+				D309913521A6C8A900564127 /* CategoryObj+Exchange1.m */,
+				D309913721A6C8B400564127 /* CategoryObj+Exchange2.h */,
+				D309913821A6C8B400564127 /* CategoryObj+Exchange2.m */,
 				D309910721A6A1AC00564127 /* Main.storyboard */,
 				D309910A21A6A1AD00564127 /* Assets.xcassets */,
 				D309910C21A6A1AD00564127 /* LaunchScreen.storyboard */,
@@ -231,7 +246,10 @@
 				D309910621A6A1AC00564127 /* ViewController.m in Sources */,
 				D309912D21A6A6F500564127 /* CategoryObj+Test1.m in Sources */,
 				D309912A21A6A6D000564127 /* CategoryObj.m in Sources */,
+				D309913C21A6C97500564127 /* NSObject+Runtime.m in Sources */,
 				D309912721A6A1D800564127 /* CustomView.m in Sources */,
+				D309913621A6C8A900564127 /* CategoryObj+Exchange1.m in Sources */,
+				D309913921A6C8B400564127 /* CategoryObj+Exchange2.m in Sources */,
 				D309911121A6A1AD00564127 /* main.m in Sources */,
 				D309913021A6A71F00564127 /* CategoryObj+Test2.m in Sources */,
 				D309913321A6A90E00564127 /* SubCategoryObj.m in Sources */,

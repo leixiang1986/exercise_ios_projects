@@ -7,15 +7,38 @@
 //
 
 #import "UILabel+LXLocalize.h"
+#import <objc/runtime.h>
+#import "LanguageHeader.h"
 
 @implementation UILabel (LXLocalize)
-+ (void)load {
-    
-    
+
+- (void)localizedString:(NSString *)key {
+    [self setLocalizedStringKey:key];
+    [self setText:NSLocalizedString(key, nil)];
 }
 
-- (instancetype)initWithFrame_localize:(CGRect)frame {
-    return [self initWithFrame_localize:frame];
+#pragma mark - Private
+- (void)languageChanged {
+    [self setText:NSLocalizedString([self localizedStringKey], nil)];
+}
+
+- (void)setLocalizedStringKey:(NSString *)key {
+    if ([self localizedStringKey] == nil) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(languageChanged) name:LXLanguageChangedNotification object:nil];
+    }
+    objc_setAssociatedObject(self, @selector(localizedStringKey), key, OBJC_ASSOCIATION_COPY);
+}
+
+- (NSString *)localizedStringKey {
+    return objc_getAssociatedObject(self, @selector(localizedStringKey));
+}
+
+- (void)setLocalizedAttributeStringKey:(NSString *)key {
+    objc_setAssociatedObject(self, @selector(localizedAttributeStringKey), key, OBJC_ASSOCIATION_COPY);
+}
+
+- (NSString *)localizedAttributeStringKey {
+    return objc_getAssociatedObject(self, @selector(localizedAttributeStringKey));
 }
 
 @end

@@ -11,7 +11,15 @@
 #import <objc/runtime.h>
 #import "CategoryObj+Test1.h"
 #import "CategoryObj+Test2.h"
+#import "CategoryObj+Exchange1.h"
+#import "CategoryObj+Exchange2.h"
 #import "SubCategoryObj.h"
+
+/**
+ runtime的应用:
+ 1，数据库中创建table时，用表名和创建方法字符串构造一个key:value字典，通过循环的方式创建表，用RuntimeInvoker的invoke实现;
+ 
+ */
 
 @interface ViewController ()
 
@@ -21,10 +29,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self testCategoryMethod];
-    [self changeInstanceClass];
-    [self callUnreconglizeMechod];
+    [self testDealloc];
+//    [self testCategoryMethod];
+//    [self changeInstanceClass];
+//    [self callUnreconglizeMechod];
 }
 
 //替换实例的类
@@ -65,6 +73,12 @@
     CategoryObj *obj = [[CategoryObj alloc] init];
     SubCategoryObj *subobj = [[SubCategoryObj alloc] init];
     [subobj test];
+    [obj test];
+}
+
+//测试多个分类交换dealloc方法的情况
+- (void)testDealloc {
+    CategoryObj *obj = [[CategoryObj alloc] init];
     [obj test];
 }
 

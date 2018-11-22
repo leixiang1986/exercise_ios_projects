@@ -24,4 +24,8 @@
     NSLog(@"SubCategoryObj 中的test方法");
 }
 
+//- (void)dealloc {
+//    NSLog(@"SubCategoryObj dealloc");
+//}
+
 @end

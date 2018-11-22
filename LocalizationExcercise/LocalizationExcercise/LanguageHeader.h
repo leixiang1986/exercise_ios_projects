@@ -8,9 +8,8 @@
 
 #ifndef LanguageHeader_h
 #define LanguageHeader_h
-#import "DTLanguageTools.h"
 
-
+static NSString *LXLanguageChangedNotification = @"LXLanguageChangedNotification";
 
 
 #endif /* LanguageHeader_h */
