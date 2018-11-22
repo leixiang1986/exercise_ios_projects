@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+/** 事件过程
+ 
+ 
+ */
 typedef NS_ENUM(NSInteger,DTLanguageType) {
     DTLanguageType_en,
     DTLanguageType_zh_Hans

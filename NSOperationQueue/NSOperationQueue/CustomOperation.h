@@ -1,0 +1,18 @@
+//
+//  CustomOperation.h
+//  NSOperationQueue
+//
+//  Created by leixiang on 2018/11/21.
+//  Copyright © 2018年 admin. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "TestConfigModel.h"
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface CustomOperation : NSObject
+- (instancetype)initWithModel:(TestConfigModel *)model;
+@end
+
+NS_ASSUME_NONNULL_END

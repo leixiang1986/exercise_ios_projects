@@ -16,6 +16,8 @@
 		D3C0A27F21A4F23500810698 /* GCDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C0A27E21A4F23500810698 /* GCDUITests.m */; };
 		D3C0A28B21A4F28100810698 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C0A28A21A4F28100810698 /* HomeTableViewController.m */; };
 		D3C0A29121A4F47F00810698 /* BlockInMethodVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C0A29021A4F47F00810698 /* BlockInMethodVC.m */; };
+		D3C0A29421A4F63200810698 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C0A29321A4F63200810698 /* BaseViewController.m */; };
+		D3C0A2CD21A52D2700810698 /* BlockInMethodObj.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C0A2CC21A52D2700810698 /* BlockInMethodObj.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,10 @@
 		D3C0A28A21A4F28100810698 /* HomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
 		D3C0A28F21A4F47F00810698 /* BlockInMethodVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockInMethodVC.h; sourceTree = "<group>"; };
 		D3C0A29021A4F47F00810698 /* BlockInMethodVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockInMethodVC.m; sourceTree = "<group>"; };
+		D3C0A29221A4F63200810698 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		D3C0A29321A4F63200810698 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		D3C0A2CB21A52D2700810698 /* BlockInMethodObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockInMethodObj.h; sourceTree = "<group>"; };
+		D3C0A2CC21A52D2700810698 /* BlockInMethodObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockInMethodObj.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +99,12 @@
 				D3C0A26921A4F23300810698 /* ViewController.m */,
 				D3C0A28921A4F28100810698 /* HomeTableViewController.h */,
 				D3C0A28A21A4F28100810698 /* HomeTableViewController.m */,
+				D3C0A29221A4F63200810698 /* BaseViewController.h */,
+				D3C0A29321A4F63200810698 /* BaseViewController.m */,
 				D3C0A28F21A4F47F00810698 /* BlockInMethodVC.h */,
 				D3C0A29021A4F47F00810698 /* BlockInMethodVC.m */,
+				D3C0A2CB21A52D2700810698 /* BlockInMethodObj.h */,
+				D3C0A2CC21A52D2700810698 /* BlockInMethodObj.m */,
 				D3C0A26B21A4F23300810698 /* Main.storyboard */,
 				D3C0A26E21A4F23500810698 /* Assets.xcassets */,
 				D3C0A27021A4F23500810698 /* LaunchScreen.storyboard */,
@@ -214,9 +224,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C0A28B21A4F28100810698 /* HomeTableViewController.m in Sources */,
+				D3C0A29421A4F63200810698 /* BaseViewController.m in Sources */,
 				D3C0A26A21A4F23300810698 /* ViewController.m in Sources */,
 				D3C0A27521A4F23500810698 /* main.m in Sources */,
 				D3C0A29121A4F47F00810698 /* BlockInMethodVC.m in Sources */,
+				D3C0A2CD21A52D2700810698 /* BlockInMethodObj.m in Sources */,
 				D3C0A26721A4F23300810698 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

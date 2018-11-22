@@ -7,6 +7,7 @@
 //
 
 #import "BlockInMethodVC.h"
+#import "BlockInMethodObj.h"
 
 @interface BlockInMethodVC ()
 
@@ -17,16 +18,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    /**
+    1,如果不退出控制器，BlockInMethodObj不会dealloc
+    2,退出控制器,控制器销毁了，但是BlockInMethodObj不会销毁，原因是dispatch持有了BlockInMethodObj对象
+     */
+    [[[BlockInMethodObj alloc] init] testWithBlock:^{
+        NSLog(@"控制器中执行 block");
+    }];
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)dealloc {
+    NSLog(@"Block in  method vc dealloc");
 }
-*/
 
 @end
