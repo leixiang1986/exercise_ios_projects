@@ -56,8 +56,11 @@
 //    [self testExchangeSubClassTest];
 //    [self testIvar];
     //绑定的属性是否有kvo
-    [self testAssociateKVO];
+//    [self testAssociateKVO];
 //    [self testOverwriteSetter];
+    //测试绑定属性kvc,可以
+    [self testAssociateKVC];
+    
 }
 
 //替换实例的类
@@ -213,6 +216,13 @@ return [NSNumber numberWith ## selectorpart: *(ctype *)pointer]; \
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         _subTestObj.age = 10;
     });
+}
+
+//绑定属性可以kvc
+- (void)testAssociateKVC {
+    TestObject *test = [[TestObject alloc] init];
+    [test setValue:@"leixiang" forKey:@"name"];
+    NSLog(@"%@",test.name);
 }
 
 

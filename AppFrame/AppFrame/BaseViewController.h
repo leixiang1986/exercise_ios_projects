@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController
-
+@property (nonatomic, assign) BOOL isOnScreen;
+@property (nonatomic, assign) BOOL isFirstAppear;
+@property (nonatomic, weak) 
 @end
 
 NS_ASSUME_NONNULL_END
