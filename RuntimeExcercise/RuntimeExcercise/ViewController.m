@@ -18,7 +18,21 @@
 /**
  runtime的应用:
  1，数据库中创建table时，用表名和创建方法字符串构造一个key:value字典，通过循环的方式创建表，用RuntimeInvoker的invoke实现;
- 
+ 2，方法交换的细节：方法实现的IMP指针是通过Method结构体获取到的,而Method结构体又是通过类和方法的SEL获取到的。
+ 类中获取IMP
+ IMP classResumeIMP = method_getImplementation(class_getInstanceMethod(currentClass, @selector(resume)));
+ 方法交换有两种实现:
+ a:方法替换,先给类添加方法，添加成功就替换原来的方法
+ BOOL didAddMethod = class_addMethod(class,originalSelector,method_getImplementation(swizzledMethod),method_getTypeEncoding(swizzledMethod));
+ if (didAddMethod) {
+    class_replaceMethod(class,swizzledSelector,method_getImplementation(originalMethod),method_getTypeEncoding(originalMethod));
+ } else {
+    method_exchangeImplementations(originalMethod, swizzledMethod);
+ }
+ b:方法交换,直接交换两个方法的实现
+ method_exchangeImplementations(originalMethod, swizzledMethod);
+ 出现的问题:
+ 方案a，虽然是更
  */
 
 @interface ViewController ()

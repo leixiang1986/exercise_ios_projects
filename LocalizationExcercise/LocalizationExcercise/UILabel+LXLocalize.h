@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 #define L(key) NSLocalizedString(key, nil)
 @interface UILabel (LXLocalize)
 
-- (void)localizaedString:(NSString *)key;
 
 @end
 

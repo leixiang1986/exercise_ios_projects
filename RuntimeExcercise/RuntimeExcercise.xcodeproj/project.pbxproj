@@ -22,6 +22,8 @@
 		D309913621A6C8A900564127 /* CategoryObj+Exchange1.m in Sources */ = {isa = PBXBuildFile; fileRef = D309913521A6C8A900564127 /* CategoryObj+Exchange1.m */; };
 		D309913921A6C8B400564127 /* CategoryObj+Exchange2.m in Sources */ = {isa = PBXBuildFile; fileRef = D309913821A6C8B400564127 /* CategoryObj+Exchange2.m */; };
 		D309913C21A6C97500564127 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = D309913B21A6C97500564127 /* NSObject+Runtime.m */; };
+		D38F26B121A78ED00002FBA3 /* SubCategoryObj+Exchange1.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F26B021A78ED00002FBA3 /* SubCategoryObj+Exchange1.m */; };
+		D38F26B421A78EDB0002FBA3 /* SubCategoryObj+Exchange2.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F26B321A78EDB0002FBA3 /* SubCategoryObj+Exchange2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,10 @@
 		D309913821A6C8B400564127 /* CategoryObj+Exchange2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CategoryObj+Exchange2.m"; sourceTree = "<group>"; };
 		D309913A21A6C97500564127 /* NSObject+Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
 		D309913B21A6C97500564127 /* NSObject+Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
+		D38F26AF21A78ED00002FBA3 /* SubCategoryObj+Exchange1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SubCategoryObj+Exchange1.h"; sourceTree = "<group>"; };
+		D38F26B021A78ED00002FBA3 /* SubCategoryObj+Exchange1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SubCategoryObj+Exchange1.m"; sourceTree = "<group>"; };
+		D38F26B221A78EDB0002FBA3 /* SubCategoryObj+Exchange2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SubCategoryObj+Exchange2.h"; sourceTree = "<group>"; };
+		D38F26B321A78EDB0002FBA3 /* SubCategoryObj+Exchange2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SubCategoryObj+Exchange2.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,10 @@
 				D309913521A6C8A900564127 /* CategoryObj+Exchange1.m */,
 				D309913721A6C8B400564127 /* CategoryObj+Exchange2.h */,
 				D309913821A6C8B400564127 /* CategoryObj+Exchange2.m */,
+				D38F26AF21A78ED00002FBA3 /* SubCategoryObj+Exchange1.h */,
+				D38F26B021A78ED00002FBA3 /* SubCategoryObj+Exchange1.m */,
+				D38F26B221A78EDB0002FBA3 /* SubCategoryObj+Exchange2.h */,
+				D38F26B321A78EDB0002FBA3 /* SubCategoryObj+Exchange2.m */,
 				D309910721A6A1AC00564127 /* Main.storyboard */,
 				D309910A21A6A1AD00564127 /* Assets.xcassets */,
 				D309910C21A6A1AD00564127 /* LaunchScreen.storyboard */,
@@ -247,9 +257,11 @@
 				D309912D21A6A6F500564127 /* CategoryObj+Test1.m in Sources */,
 				D309912A21A6A6D000564127 /* CategoryObj.m in Sources */,
 				D309913C21A6C97500564127 /* NSObject+Runtime.m in Sources */,
+				D38F26B421A78EDB0002FBA3 /* SubCategoryObj+Exchange2.m in Sources */,
 				D309912721A6A1D800564127 /* CustomView.m in Sources */,
 				D309913621A6C8A900564127 /* CategoryObj+Exchange1.m in Sources */,
 				D309913921A6C8B400564127 /* CategoryObj+Exchange2.m in Sources */,
+				D38F26B121A78ED00002FBA3 /* SubCategoryObj+Exchange1.m in Sources */,
 				D309911121A6A1AD00564127 /* main.m in Sources */,
 				D309913021A6A71F00564127 /* CategoryObj+Test2.m in Sources */,
 				D309913321A6A90E00564127 /* SubCategoryObj.m in Sources */,

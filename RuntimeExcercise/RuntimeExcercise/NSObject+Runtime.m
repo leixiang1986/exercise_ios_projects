@@ -46,20 +46,18 @@
                         method_getTypeEncoding(swizzledMethod)) ) {
         /* replace class instance method, added if selector not exist */
         /* for class cluster , it always add new selector here */
-        class_replaceMethod(cls,
-                            newSelector,
-                            method_getImplementation(originalMethod),
-                            method_getTypeEncoding(originalMethod));
+        class_replaceMethod(cls,newSelector,method_getImplementation(originalMethod),method_getTypeEncoding(originalMethod));
         
     } else {
         /* swizzleMethod maybe belong to super */
-        class_replaceMethod(cls,
-                            newSelector,
-                            class_replaceMethod(cls,
-                                                origSelector,
-                                                method_getImplementation(swizzledMethod),
-                                                method_getTypeEncoding(swizzledMethod)),
-                            method_getTypeEncoding(originalMethod));
+//        class_replaceMethod(cls,
+//                            newSelector,
+//                            class_replaceMethod(cls,
+//                                                origSelector,
+//                                                method_getImplementation(swizzledMethod),
+//                                                method_getTypeEncoding(swizzledMethod)),
+//                            method_getTypeEncoding(originalMethod));
+        method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
 @end

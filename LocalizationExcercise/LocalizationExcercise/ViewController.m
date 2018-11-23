@@ -24,7 +24,16 @@
  #!/bin/bash
  python ${SRCROOT}/${TARGET_NAME}/RunScript/AutoGenStrings.py ${SRCROOT}/${TARGET_NAME}
  
- 
+ 四，国际化的页面切换(解决微信页面跳转的动画卡顿)
+ 出现这个卡顿的原因是微信在切换语言后，重新初始化了页面，在初始化tabbarVC的时候，切换了tabbarIndex,
+ 然后再进行跳转，这样如果不延时处理，那么切换TabbarIndex会出现失败的情况。
+ 参照网上的例子通过设置tabbarVC的语言Controller的ViewControllers数组达到直接无动画跳转的效果。具体过程很简单,主要是思想:
+ 先取出切换语言tabbarVC对应下的NavigationVC，取出ViewControllers，然后初始化并添加需要push的控制器，到ViewControllers，设置回NavigationVC的ViewControllers。这样就实现了直接跳转:
+ PBSettingViewController *vc = [[PBSettingViewController alloc] init];
+ NSMutableArray *vcs = rootVC.viewControllers.mutableCopy;
+ [weakSelf switchToTabAtIndex:1];
+ [vcs addObject:vc];
+ rootVC.viewControllers = vcs;
  
  */
 
@@ -37,19 +46,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    object_setClass(self.view, [CustomView class]);
+   
 //    self.label.text = NSLocalizedString(@"viewController.test", nil);
-    [self.label localizaedString:@"viewController.test"];
     [self reloadLabel];
-    SEL selector = NSSelectorFromString(@"hhh");
-    [self.view performSelector:selector];
-//    NSLocalizedString(<#key#>, <#comment#>)
-//    UILabel *label = [[UILabel alloc] init];
-//
-//    UIButton *button;
-//    UITextView;
-//    UITextField;
-//    UIView;
+    
+   
+
 }
 - (IBAction)switchChiese:(id)sender {
 //     [[NSUserDefaults standardUserDefaults] setObject:@[@"zh-Hans-CN"] forKey:@"AppleLanguages"];
@@ -75,8 +77,8 @@
 }
 
 - (IBAction)next:(id)sender {
-    SecondViewController *second = [[SecondViewController alloc] init];
-    [self.navigationController pushViewController:second animated:YES];
+//    SecondViewController *second = [[SecondViewController alloc] init];
+//    [self.navigationController pushViewController:second animated:YES];
 }
 
 - (void)reloadLabel {
