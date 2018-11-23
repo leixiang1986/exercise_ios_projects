@@ -14,6 +14,8 @@
 #import "CategoryObj+Exchange1.h"
 #import "CategoryObj+Exchange2.h"
 #import "SubCategoryObj.h"
+#import "TestObject+BindTest.h"
+#import "SubTestObject.h"
 
 /**
  runtime的应用:
@@ -32,20 +34,30 @@
  }
  b:方法交换,直接交换两个方法的实现
  method_exchangeImplementations(originalMethod, swizzledMethod);
+ 
+ 3,object_开头的函数参数是具体的对象相关的函数(一般参数是具体的对象,比如要获取具体的对象的值等)，objc_开头的函数是泛指的对象相关的函数(一般参数是对象所属的类，通过对类进行操作，改变实例对象的属性，如objc_getAssociatedObject())
+ 
  */
 
 @interface ViewController ()
-
+@property (nonatomic, strong) TestObject *testObj;
+@property (nonatomic, strong) SubTestObject *subTestObj;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self testDealloc];
+    //多个分类交换dealloc，调用自身，可以实现全部都得到调用
+//    [self testDealloc];
 //    [self testCategoryMethod];
 //    [self changeInstanceClass];
 //    [self callUnreconglizeMechod];
+//    [self testExchangeSubClassTest];
+//    [self testIvar];
+    //绑定的属性是否有kvo
+    [self testAssociateKVO];
+//    [self testOverwriteSetter];
 }
 
 //替换实例的类
@@ -89,10 +101,119 @@
     [obj test];
 }
 
-//测试多个分类交换dealloc方法的情况
+//测试多个分类交换dealloc方法的情况(交换方法在NSObject的扩展中)
+//结论：多个分类交换dealloc方法，如果在交换的方法中调用了自身，那么都会得到执行，并且如果自身实现了dealloc，那么自身dealloc也会得到执行
 - (void)testDealloc {
     CategoryObj *obj = [[CategoryObj alloc] init];
     [obj test];
 }
+
+//测试子类交换test方法，分为子类重写和不重写进行交换(交换方法在NSObject的扩展中)
+- (void)testExchangeSubClassTest {
+    SubCategoryObj *obj = [[SubCategoryObj alloc] init];
+    [obj exchange];
+}
+
+//测试获取变量的类型和值
+- (void)testIvar {
+    unsigned int count;
+    name = @"测试";
+    _age = 13;
+    Ivar *ivarList = class_copyIvarList([self class], &count);
+    for (int i= 0; i<count; i++) {
+        Ivar ivar = ivarList[i];
+        const char *ivarName = ivar_getName(ivar);
+        const char *ivarType = ivar_getTypeEncoding(ivar);
+//        id value = [self valueForKey:[NSString stringWithUTF8String:ivarName]];
+        //如果是通过runtime来做,那么需要判断是否是对象类型，对象类型就用object_getIvar(self, ivar)获取；
+        //C语言类型就通过对象的指针偏移来做,具体可参照:FLEXRuntimeUtility
+        //其中有一个CASE的宏定义思想，方法进入只会匹配一种情况
+        id value = nil;
+        if (ivarType[0] == @encode(id)[0] || ivarType[0] == @encode(Class)[0]) {
+            value = object_getIvar(self, ivar);
+        } else {
+            ptrdiff_t offset = ivar_getOffset(ivar);
+            void *pointer = (__bridge void *)self + offset;
+            value = [self valueForPrimitivePointer:pointer objCType:ivarType];
+        }
+        NSLog(@"得到的值:%@",value);
+        NSLog(@"Ivar(%d): %@==type:%@", i, [NSString stringWithUTF8String:ivarName],[NSString stringWithUTF8String:ivarType]);
+    }
+    free(ivarList);
+    
+}
+
+//通过对象的ivar获取C类型的数据
+- (NSValue *)valueForPrimitivePointer:(void *)pointer objCType:(const char *)type
+{
+    // CASE macro inspired by https://www.mikeash.com/pyblog/friday-qa-2013-02-08-lets-build-key-value-coding.html
+#define CASE(ctype, selectorpart) \
+if(strcmp(type, @encode(ctype)) == 0) { \
+return [NSNumber numberWith ## selectorpart: *(ctype *)pointer]; \
+}
+    
+    CASE(BOOL, Bool);
+    CASE(unsigned char, UnsignedChar);
+    CASE(short, Short);
+    CASE(unsigned short, UnsignedShort);
+    CASE(int, Int);
+    CASE(unsigned int, UnsignedInt);
+    CASE(long, Long);
+    CASE(unsigned long, UnsignedLong);
+    CASE(long long, LongLong);
+    CASE(unsigned long long, UnsignedLongLong);
+    CASE(float, Float);
+    CASE(double, Double);
+    
+#undef CASE
+    
+    NSValue *value = nil;
+    @try {
+        value = [NSValue valueWithBytes:pointer objCType:type];
+    } @catch (NSException *exception) {
+        // Certain type encodings are not supported by valueWithBytes:objCType:. Just fail silently if an exception is thrown.
+    }
+    
+    return value;
+}
+
+//测试结果，不加willChangeValueForKey和didChangeValueForKey会执行kvo，添加了反而会执行两次
+//MJRefresh中Chategory的block添加了willChangeValueForKey和didChangeValueForKey，但测试绑定添加block，似乎没有这个问题，也是可以监听到kvo的
+- (void)testAssociateKVO {
+    _testObj = [[TestObject alloc] init];
+    _testObj.name = @"测试名字";
+    [_testObj addObserver:self forKeyPath:@"name" options:(NSKeyValueObservingOptionNew) context:NULL];
+    [_testObj addObserver:self forKeyPath:@"block" options:(NSKeyValueObservingOptionNew) context:NULL];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.testObj.name = @"修改了名字";
+        self.testObj.block = ^{
+            NSLog(@"block");
+        };
+        [self testAssociateKVO];
+    });
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"name"] || [keyPath isEqualToString:@"block"]) {
+        NSLog(@"接收到了testobj的KVO --name:%@",change);
+    } else if ([keyPath isEqualToString:@"age"]) {
+        NSLog(@"SubTestObj的kvo触发了 %@",change);
+    }
+}
+
+//测试子类复写了setter方法的kvo
+//结论:当为普通属性变量时，复写setter方法，会触发kvo
+- (void)testOverwriteSetter {
+    _subTestObj = [[SubTestObject alloc] init];
+    _subTestObj.age = 10;
+    [_subTestObj addObserver:self forKeyPath:@"age" options:(NSKeyValueObservingOptionNew) context:NULL];
+    void(^block)(void) = ^{
+        NSLog(@"这是一个block");
+    };
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _subTestObj.age = 10;
+    });
+}
+
 
 @end

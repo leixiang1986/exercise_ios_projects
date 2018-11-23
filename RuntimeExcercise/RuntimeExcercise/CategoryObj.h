@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CategoryObj : UIView
 - (void)test;
+- (void)exchange;
 @end
 
 NS_ASSUME_NONNULL_END

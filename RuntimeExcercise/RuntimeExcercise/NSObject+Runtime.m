@@ -38,6 +38,7 @@
     /* if current class not exist selector, then get super*/
     Method originalMethod = class_getInstanceMethod(class, origSelector);
     Method swizzledMethod = class_getInstanceMethod(class, newSelector);
+    
     /* add selector if not exist, implement append with method */
     if (class_addMethod(class,
                         origSelector,
@@ -49,14 +50,14 @@
 
     } else {
 //         swizzleMethod maybe belong to super
-        class_replaceMethod(class,
-                            newSelector,
-                            class_replaceMethod(class,
-                                                origSelector,
-                                                method_getImplementation(swizzledMethod),
-                                                method_getTypeEncoding(swizzledMethod)),
-                            method_getTypeEncoding(originalMethod));
-//        method_exchangeImplementations(originalMethod, swizzledMethod);
+//        class_replaceMethod(class,
+//                            newSelector,
+//                            class_replaceMethod(class,
+//                                                origSelector,
+//                                                method_getImplementation(swizzledMethod),
+//                                                method_getTypeEncoding(swizzledMethod)),
+//                            method_getTypeEncoding(originalMethod));
+        method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
 @end

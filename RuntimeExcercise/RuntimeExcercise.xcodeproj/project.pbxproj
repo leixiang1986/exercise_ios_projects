@@ -24,6 +24,9 @@
 		D309913C21A6C97500564127 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = D309913B21A6C97500564127 /* NSObject+Runtime.m */; };
 		D38F26B121A78ED00002FBA3 /* SubCategoryObj+Exchange1.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F26B021A78ED00002FBA3 /* SubCategoryObj+Exchange1.m */; };
 		D38F26B421A78EDB0002FBA3 /* SubCategoryObj+Exchange2.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F26B321A78EDB0002FBA3 /* SubCategoryObj+Exchange2.m */; };
+		D38F26FC21A7E8C10002FBA3 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F26FB21A7E8C10002FBA3 /* TestObject.m */; };
+		D38F26FF21A7E8D80002FBA3 /* TestObject+BindTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F26FE21A7E8D80002FBA3 /* TestObject+BindTest.m */; };
+		D38F270221A7EC680002FBA3 /* SubTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F270121A7EC680002FBA3 /* SubTestObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,12 @@
 		D38F26B021A78ED00002FBA3 /* SubCategoryObj+Exchange1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SubCategoryObj+Exchange1.m"; sourceTree = "<group>"; };
 		D38F26B221A78EDB0002FBA3 /* SubCategoryObj+Exchange2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SubCategoryObj+Exchange2.h"; sourceTree = "<group>"; };
 		D38F26B321A78EDB0002FBA3 /* SubCategoryObj+Exchange2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SubCategoryObj+Exchange2.m"; sourceTree = "<group>"; };
+		D38F26FA21A7E8C10002FBA3 /* TestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObject.h; sourceTree = "<group>"; };
+		D38F26FB21A7E8C10002FBA3 /* TestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestObject.m; sourceTree = "<group>"; };
+		D38F26FD21A7E8D80002FBA3 /* TestObject+BindTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestObject+BindTest.h"; sourceTree = "<group>"; };
+		D38F26FE21A7E8D80002FBA3 /* TestObject+BindTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TestObject+BindTest.m"; sourceTree = "<group>"; };
+		D38F270021A7EC680002FBA3 /* SubTestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubTestObject.h; sourceTree = "<group>"; };
+		D38F270121A7EC680002FBA3 /* SubTestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubTestObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +128,8 @@
 				D309910521A6A1AC00564127 /* ViewController.m */,
 				D309913A21A6C97500564127 /* NSObject+Runtime.h */,
 				D309913B21A6C97500564127 /* NSObject+Runtime.m */,
+				D38F26FA21A7E8C10002FBA3 /* TestObject.h */,
+				D38F26FB21A7E8C10002FBA3 /* TestObject.m */,
 				D309912821A6A6D000564127 /* CategoryObj.h */,
 				D309912921A6A6D000564127 /* CategoryObj.m */,
 				D309913121A6A90E00564127 /* SubCategoryObj.h */,
@@ -135,6 +146,10 @@
 				D38F26B021A78ED00002FBA3 /* SubCategoryObj+Exchange1.m */,
 				D38F26B221A78EDB0002FBA3 /* SubCategoryObj+Exchange2.h */,
 				D38F26B321A78EDB0002FBA3 /* SubCategoryObj+Exchange2.m */,
+				D38F26FD21A7E8D80002FBA3 /* TestObject+BindTest.h */,
+				D38F26FE21A7E8D80002FBA3 /* TestObject+BindTest.m */,
+				D38F270021A7EC680002FBA3 /* SubTestObject.h */,
+				D38F270121A7EC680002FBA3 /* SubTestObject.m */,
 				D309910721A6A1AC00564127 /* Main.storyboard */,
 				D309910A21A6A1AD00564127 /* Assets.xcassets */,
 				D309910C21A6A1AD00564127 /* LaunchScreen.storyboard */,
@@ -263,7 +278,10 @@
 				D309913921A6C8B400564127 /* CategoryObj+Exchange2.m in Sources */,
 				D38F26B121A78ED00002FBA3 /* SubCategoryObj+Exchange1.m in Sources */,
 				D309911121A6A1AD00564127 /* main.m in Sources */,
+				D38F26FC21A7E8C10002FBA3 /* TestObject.m in Sources */,
+				D38F270221A7EC680002FBA3 /* SubTestObject.m in Sources */,
 				D309913021A6A71F00564127 /* CategoryObj+Test2.m in Sources */,
+				D38F26FF21A7E8D80002FBA3 /* TestObject+BindTest.m in Sources */,
 				D309913321A6A90E00564127 /* SubCategoryObj.m in Sources */,
 				D309910321A6A1AC00564127 /* AppDelegate.m in Sources */,
 			);

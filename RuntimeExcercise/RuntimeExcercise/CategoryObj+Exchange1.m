@@ -15,7 +15,7 @@
     SEL dellocSEL = NSSelectorFromString(@"dealloc");
     
     [self swizzleInstanceMethod:dellocSEL withMethod:@selector(dealloc1) forClass:[self class]];
-    [self swizzleInstanceMethod:NSSelectorFromString(@"test") withMethod:@selector(myTest) forClass:[self class]];
+
 }
 
 //+(void)load{
@@ -34,10 +34,7 @@
     [self dealloc1];
 }
 
-- (void)myTest {
-    NSLog(@"执行了myTest");
-    [self myTest];
-}
+
 
 
 

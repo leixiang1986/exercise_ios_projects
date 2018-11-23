@@ -30,8 +30,12 @@
     NSLog(@"CategoryObj 中的test方法");
 }
 
-//- (void)dealloc {
-//    NSLog(@"CategoryObj dealloc");
-//}
+- (void)exchange {
+    NSLog(@"CategoryObj 中的exchange");
+}
+
+- (void)dealloc {
+    NSLog(@"CategoryObj dealloc");
+}
 
 @end

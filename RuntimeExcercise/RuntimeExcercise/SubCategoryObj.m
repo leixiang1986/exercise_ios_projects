@@ -20,9 +20,13 @@
     NSLog(@"SubCategoryObj 中的initialize");
 }
 
-- (void)test {
-    NSLog(@"SubCategoryObj 中的test方法");
+- (void)exchange {
+    NSLog(@"子类中调用了exchange方法");
 }
+
+//- (void)test {
+//    NSLog(@"SubCategoryObj 中的test方法");
+//}
 
 //- (void)dealloc {
 //    NSLog(@"SubCategoryObj dealloc");
