@@ -13,8 +13,9 @@
 @implementation CategoryObj (Exchange1)
 + (void)load {
     SEL dellocSEL = NSSelectorFromString(@"dealloc");
-    [self swizzleInstanceMethod:dellocSEL withMethod:@selector(dealloc1)];
-    [self swizzleInstanceMethod:NSSelectorFromString(@"test") withMethod:@selector(myTest)];
+    
+    [self swizzleInstanceMethod:dellocSEL withMethod:@selector(dealloc1) forClass:[self class]];
+    [self swizzleInstanceMethod:NSSelectorFromString(@"test") withMethod:@selector(myTest) forClass:[self class]];
 }
 
 //+(void)load{
@@ -27,8 +28,6 @@
 - (void)replaceDelloc{
     NSLog(@"delloc被替换了");
 }
-
-
 
 - (void)dealloc1 {
     NSLog(@"exchange1 中的dealloc");

@@ -12,12 +12,12 @@
 
 @implementation CategoryObj (Exchange2)
 + (void)load {
-    [self swizzleInstanceMethod:NSSelectorFromString(@"dealloc") withMethod:@selector(dealloc1)];
+    [self swizzleInstanceMethod:NSSelectorFromString(@"dealloc") withMethod:@selector(dealloc2) forClass:[self class]];
 }
 
-- (void)dealloc1 {
+- (void)dealloc2 {
     NSLog(@"exchange2 中的dealloc");
-    [self dealloc1];
+    [self dealloc2];
 }
 
 

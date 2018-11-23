@@ -23,6 +23,7 @@
  IMP classResumeIMP = method_getImplementation(class_getInstanceMethod(currentClass, @selector(resume)));
  方法交换有两种实现:
  a:方法替换,先给类添加方法，添加成功就替换原来的方法
+  如果一个类没有实现dealloc方法，那么就会出现添加dealloc方法就会成功，然后才是替换。如果实现了dealloc方法，那么添加方法就会返回为NO
  BOOL didAddMethod = class_addMethod(class,originalSelector,method_getImplementation(swizzledMethod),method_getTypeEncoding(swizzledMethod));
  if (didAddMethod) {
     class_replaceMethod(class,swizzledSelector,method_getImplementation(originalMethod),method_getTypeEncoding(originalMethod));
@@ -31,8 +32,6 @@
  }
  b:方法交换,直接交换两个方法的实现
  method_exchangeImplementations(originalMethod, swizzledMethod);
- 出现的问题:
- 方案a，虽然是更
  */
 
 @interface ViewController ()

@@ -10,14 +10,13 @@
 #import <objc/runtime.h>
 
 @implementation NSObject (Runtime)
-+ (void)swizzleClassMethod:(SEL)origSelector withMethod:(SEL)newSelector
++ (void)swizzleClassMethod:(SEL)origSelector withMethod:(SEL)newSelector forClass:(Class)class
 {
-    Class cls = [self class];
     
-    Method originalMethod = class_getClassMethod(cls, origSelector);
-    Method swizzledMethod = class_getClassMethod(cls, newSelector);
+    Method originalMethod = class_getClassMethod(class, origSelector);
+    Method swizzledMethod = class_getClassMethod(class, newSelector);
     
-    Class metacls = objc_getMetaClass(NSStringFromClass(cls).UTF8String);
+    Class metacls = objc_getMetaClass(NSStringFromClass(class).UTF8String);
     if (class_addMethod(metacls,
                         origSelector,
                         method_getImplementation(swizzledMethod),
@@ -33,31 +32,31 @@
     }
 }
 
-+ (void)swizzleInstanceMethod:(SEL)origSelector withMethod:(SEL)newSelector
++ (void)swizzleInstanceMethod:(SEL)origSelector withMethod:(SEL)newSelector  forClass:(Class)class
 {
-    Class cls = [self class];
+//    Class cls = [self class];
     /* if current class not exist selector, then get super*/
-    Method originalMethod = class_getInstanceMethod(cls, origSelector);
-    Method swizzledMethod = class_getInstanceMethod(cls, newSelector);
+    Method originalMethod = class_getInstanceMethod(class, origSelector);
+    Method swizzledMethod = class_getInstanceMethod(class, newSelector);
     /* add selector if not exist, implement append with method */
-    if (class_addMethod(cls,
+    if (class_addMethod(class,
                         origSelector,
                         method_getImplementation(swizzledMethod),
                         method_getTypeEncoding(swizzledMethod)) ) {
         /* replace class instance method, added if selector not exist */
         /* for class cluster , it always add new selector here */
-        class_replaceMethod(cls,newSelector,method_getImplementation(originalMethod),method_getTypeEncoding(originalMethod));
-        
+        class_replaceMethod(class,newSelector,method_getImplementation(originalMethod),method_getTypeEncoding(originalMethod));
+
     } else {
-        /* swizzleMethod maybe belong to super */
-//        class_replaceMethod(cls,
-//                            newSelector,
-//                            class_replaceMethod(cls,
-//                                                origSelector,
-//                                                method_getImplementation(swizzledMethod),
-//                                                method_getTypeEncoding(swizzledMethod)),
-//                            method_getTypeEncoding(originalMethod));
-        method_exchangeImplementations(originalMethod, swizzledMethod);
+//         swizzleMethod maybe belong to super
+        class_replaceMethod(class,
+                            newSelector,
+                            class_replaceMethod(class,
+                                                origSelector,
+                                                method_getImplementation(swizzledMethod),
+                                                method_getTypeEncoding(swizzledMethod)),
+                            method_getTypeEncoding(originalMethod));
+//        method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
 @end
