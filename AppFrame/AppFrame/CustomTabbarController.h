@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class CustomTabbarController;
 @protocol CustomTabbarControllerDelegate <NSObject>
 @optional
-- (BOOL)tabbarController:(CustomTabbarController *)tabbarController willSelectViewController:(UIViewController *)viewController;
+- (BOOL)tabbarController:(CustomTabbarController *)tabbarController shouldSelectViewController:(UIViewController *)viewController;
 - (void)tabbarController:(CustomTabbarController *)tabbarController didSelectViewController:(UIViewController *)viewController;
 - (void)tabbarController:(CustomTabbarController *)tabbarController didUnselectViewController:(UIViewController *)viewController;
 
@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nullable, nonatomic, assign) __kindof BaseViewController *selectedViewController;
 @property(nonatomic) NSUInteger selectedIndex;
 
-@property(nonatomic,readonly) UITabBar *tabBar;
+@property(nonatomic,strong ,readonly) UITabBar *tabBar;
 
 @property (nonatomic, weak) id<CustomTabbarControllerDelegate>delegate;
 @property (nonatomic, strong, readonly) CustomTabbarController *tabBarController;

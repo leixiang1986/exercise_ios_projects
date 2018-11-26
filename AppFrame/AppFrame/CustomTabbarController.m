@@ -8,6 +8,7 @@
 
 #import "CustomTabbarController.h"
 #import <objc/runtime.h>
+#import "LXViewConsts.h"
 
 //#import "ViewControllerA.h"
 //#import "ViewControllerB.h"
@@ -27,7 +28,7 @@
  */
 @interface CustomTabbarController ()
 @property (nonatomic, strong) UIView *contentView;
-
+@property (nonatomic, strong, readwrite) UITabBar *tabBar;
 @end
 
 @implementation CustomTabbarController
@@ -35,16 +36,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    UITabBarController
     
-//UIViewController
+    
+    
 }
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
     NSParameterAssert(selectedIndex < self.viewControllers.count);
     if (_selectedIndex == selectedIndex) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(tabBarController:shouldSelectViewController:)]) {
-             BOOL should = [self.delegate tabbarController:self willSelectViewController:_selectedViewController];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(tabbarController:shouldSelectViewController:)]) {
+             BOOL should = [self.delegate tabbarController:self shouldSelectViewController:_selectedViewController];
             if (!should) {
                 return;
             }
@@ -125,13 +126,13 @@
     }
 }
 
-//- (UITabBar *)tabBar {
-//    if (!_tabBar) {
-//
-//    }
-//
-//    return _ta
-//}
+- (UITabBar *)tabBar {
+    if (!_tabBar) {
+        _tabBar = [[UITabBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 49, kScreenWidth, 49)];
+    }
+
+    return _tabBar;
+}
 
 - (CustomTabbarController *)tabBarController {
     return self.customTabBarController;

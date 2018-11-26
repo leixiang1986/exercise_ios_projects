@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class CustomTabbarController;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController

@@ -58,6 +58,7 @@
 		D38F26F521A7CEF20002FBA3 /* ViewControllerC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerC.m; sourceTree = "<group>"; };
 		D38F26F721A7CF650002FBA3 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		D38F26F821A7CF650002FBA3 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		D3938EC421AB833400B52711 /* LXViewConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXViewConsts.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +116,7 @@
 				D38F26F521A7CEF20002FBA3 /* ViewControllerC.m */,
 				D38F26C421A7B84D0002FBA3 /* ViewController.h */,
 				D38F26C521A7B84D0002FBA3 /* ViewController.m */,
+				D3938EC421AB833400B52711 /* LXViewConsts.h */,
 				D38F26C721A7B84D0002FBA3 /* Main.storyboard */,
 				D38F26CA21A7B8500002FBA3 /* Assets.xcassets */,
 				D38F26CC21A7B8500002FBA3 /* LaunchScreen.storyboard */,
