@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
+
 NS_ASSUME_NONNULL_BEGIN
+
+static NSString *const kTabBarDefaultImageKey   = @"TabBarDefaultImageKey";
+static NSString *const kTabBarHighlightImageKey = @"TabBarHighlightImageKey";
+static NSString *const kTabBarTitleKey          = @"TabBarTitleKey";
+
 @class CustomTabbarController;
 @protocol CustomTabbarControllerDelegate <NSObject>
 @optional
@@ -19,7 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-
 @interface CustomTabbarController : BaseViewController
 @property(nullable, nonatomic,copy) NSArray<__kindof BaseViewController *> *viewControllers;
 @property(nullable, nonatomic, assign) __kindof BaseViewController *selectedViewController;
@@ -28,12 +33,21 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong ,readonly) UITabBar *tabBar;
 
 @property (nonatomic, weak) id<CustomTabbarControllerDelegate>delegate;
-@property (nonatomic, strong, readonly) CustomTabbarController *tabBarController;
+
+- (instancetype)initWithViewControllers:(NSArray *)viewControllers withTabBarInfos:(NSArray *)tabBarInfos NS_DESIGNATED_INITIALIZER;
 
 @end
 
 @interface BaseViewController (CustomTabbarController)
 @property (nonatomic, strong, readonly) CustomTabbarController *customTabBarController;
+@end
+
+@interface CustomTabBar : UITabBar
+@property (nonatomic, strong, readonly) NSArray *infos;
+
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame withInfos:(NSArray *)infos NS_DESIGNATED_INITIALIZER;
 @end
 
 NS_ASSUME_NONNULL_END

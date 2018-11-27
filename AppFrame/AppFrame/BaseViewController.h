@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BaseViewController : UIViewController
 @property (nonatomic, assign) BOOL isOnScreen;
 @property (nonatomic, assign) BOOL isFirstAppear;
-@property (nonatomic, weak) 
+@property (nonatomic, weak) CustomTabbarController *customTabBarController;
 @end
 
 NS_ASSUME_NONNULL_END

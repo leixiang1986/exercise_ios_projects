@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerA.h"
+#import "ViewControllerD.h"
 
 @interface ViewControllerA ()
 
@@ -18,6 +19,37 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"VC_A";
+    self.view.backgroundColor = [UIColor redColor];
+    UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    button.frame = CGRectMake(100, 100, 100, 100);
+    button.backgroundColor = [UIColor whiteColor];
+    [button addTarget:self action:@selector(buttonClick:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.view addSubview:button];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"%s",__func__);
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"%s",__func__);
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"%s",__func__);
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    NSLog(@"%s",__func__);
+}
+
+- (void)buttonClick:(id)sender {
+    ViewControllerD *vcD = [[ViewControllerD alloc] init];
+    [self.navigationController pushViewController:vcD animated:YES];
 }
 
 /*

@@ -9,6 +9,7 @@
 #import "CustomTabbarController.h"
 #import <objc/runtime.h>
 #import "LXViewConsts.h"
+#import "Masonry.h"
 
 //#import "ViewControllerA.h"
 //#import "ViewControllerB.h"
@@ -26,19 +27,54 @@
  self.navigationController.navigationBar.topItem设置的是当前控制器的导航控制器最顶部的UINavigationItem
  self.navigationController.navigationItem(.rightBarButtonItem)此时设置的是当前控制器的导航栏的UINavigationItem
  */
-@interface CustomTabbarController ()
-@property (nonatomic, strong) UIView *contentView;
+
+static CGFloat kTabbarHeight = 49;
+
+@interface CustomTabbarController ()<UITabBarDelegate>
 @property (nonatomic, strong, readwrite) UITabBar *tabBar;
+
 @end
 
 @implementation CustomTabbarController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    NSAssert(NO, @"Please user initWithViewControllers: withTabBarInfos: instead");
+    self = [self initWithViewControllers:@[] withTabBarInfos:@[]];
+    return self;
+}
+
+- (instancetype)initWithNibName:(NSString *_Nullable)nibNameOrNil bundle:(NSBundle *_Nullable)nibBundleOrNil {
+    NSAssert(NO, @"Please user initWithViewControllers: withTabBarInfos: instead");
+    self = [self initWithViewControllers:@[] withTabBarInfos:@[]];
+    return self;
+}
+
+- (instancetype)initWithViewControllers:(NSArray *)viewControllers withTabBarInfos:(NSArray *)tabBarInfos {
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        _selectedIndex = -1;
+        _viewControllers = viewControllers;
+        _tabBar = [[CustomTabBar alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kTabbarHeight) withInfos:tabBarInfos];
+        _tabBar.delegate = self;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupUI];
     
-    
-    
+}
+
+- (void)setupUI {
+    [self setSelectedIndex:0];
+    _tabBar.selectedItem = _tabBar.items.firstObject;
+    [self.view addSubview:_tabBar];
+    [_tabBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_equalTo(self.view);
+        make.height.mas_equalTo(kTabbarHeight);
+    }];
 }
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
@@ -56,7 +92,10 @@
         return;
     }
     _selectedIndex = selectedIndex;
-    [self setSelectedViewController:[self.viewControllers objectAtIndex:_selectedIndex]] ;
+    BaseViewController *selectVC = [self.viewControllers objectAtIndex:_selectedIndex];
+    if (_selectedViewController != selectVC) {
+        [self setSelectedViewController:selectVC];
+    }
 }
 
 - (void)setSelectedViewController:(__kindof UIViewController *)selectedViewController {
@@ -67,7 +106,7 @@
     
     if (_selectedViewController == selectedViewController) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(tabBarController:shouldSelectViewController:)]) {
-            BOOL should = [self.delegate tabbarController:self willSelectViewController:_selectedViewController];
+            BOOL should = [self.delegate tabbarController:self shouldSelectViewController:_selectedViewController];
             if (!should) {
                 return;
             }
@@ -126,30 +165,48 @@
     }
 }
 
-- (UITabBar *)tabBar {
-    if (!_tabBar) {
-        _tabBar = [[UITabBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 49, kScreenWidth, 49)];
-    }
-
-    return _tabBar;
+#pragma mark - UITabBarDelegate
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    NSInteger index = [tabBar.items indexOfObject:item];
+    [self setSelectedIndex:index];
 }
-
-- (CustomTabbarController *)tabBarController {
-    return self.customTabBarController;
-}
-
-
 
 @end
 
 @implementation BaseViewController (CustomTabbarController)
 
 - (CustomTabbarController *)customTabBarController {
-    objc_getAssociatedObject(self, @selector(customTabBarController));
+    return objc_getAssociatedObject(self, @selector(customTabBarController));
 }
 
-- (void)setCustomTabBarController:(CustomTabbarController * _Nonnull)customTabBarController {
+- (void)setCustomTabBarController:(CustomTabbarController *)customTabBarController {
     objc_setAssociatedObject(self, @selector(customTabBarController), customTabBarController, OBJC_ASSOCIATION_RETAIN);
 }
+
+@end
+
+
+@implementation CustomTabBar
+
+- (instancetype)initWithFrame:(CGRect)frame withInfos:(NSArray *)infos {
+    if (self = [super initWithFrame:frame]) {
+        _infos = infos;
+        NSMutableArray *items = [NSMutableArray arrayWithCapacity:infos.count];
+        for (NSDictionary *info in infos) {
+            UITabBarItem *item = [[UITabBarItem alloc] init];
+            [item setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor blackColor]} forState:(UIControlStateSelected)];
+            item.image = [[UIImage imageNamed:info[kTabBarDefaultImageKey]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            item.selectedImage = [[UIImage imageNamed:info[kTabBarHighlightImageKey]] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+            item.title = info[kTabBarTitleKey];
+            [items addObject:item];
+        }
+        
+        self.items = [items copy];
+    }
+
+    return self;
+}
+
+
 
 @end

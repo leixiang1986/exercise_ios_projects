@@ -18,8 +18,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"vc_B";
+    self.view.backgroundColor = [UIColor yellowColor];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"%s",__func__);
+}
 /*
 #pragma mark - Navigation
 

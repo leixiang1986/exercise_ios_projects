@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "CustomNavigationController.h"
 #import "CustomTabbarController.h"
+#import "ViewControllerA.h"
+#import "ViewControllerB.h"
+#import "ViewControllerC.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +23,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    CustomTabbarController *tabbarVC = [[CustomTabbarController alloc] init];
+    
+    ViewControllerA *vcA = [[ViewControllerA alloc] init];
+    vcA.title = @"vcA";
+    ViewControllerB *vcB = [[ViewControllerB alloc] init];
+    vcB.title = @"vcB";
+    ViewControllerC *vcC = [[ViewControllerC alloc] init];
+    vcC.title = @"vcC";
+    
+    
+    NSArray *infos = @[@{kTabBarTitleKey:@"vcA",kTabBarDefaultImageKey:@"ic_activity_normal",kTabBarHighlightImageKey:@"ic_activity_hlight"},
+                       @{kTabBarTitleKey:@"vcB",kTabBarDefaultImageKey:@"ic_health_normal",kTabBarHighlightImageKey:@"ic_health_hlight"},
+                       @{kTabBarTitleKey:@"vcC",kTabBarDefaultImageKey:@"ic_myband_normal",kTabBarHighlightImageKey:@"ic_myband_hlight"}];
+    
+    CustomTabbarController *tabbarVC = [[CustomTabbarController alloc] initWithViewControllers:@[vcA,vcB,vcC] withTabBarInfos:infos];
     _window.rootViewController = [[CustomNavigationController alloc] initWithRootViewController:tabbarVC];
     [_window makeKeyAndVisible];
     

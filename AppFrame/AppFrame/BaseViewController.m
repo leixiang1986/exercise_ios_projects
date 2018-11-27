@@ -19,7 +19,12 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.isFirstAppear = YES;
-    self.tabBarController
+    
+}
+
+- (CustomTabbarController *)tabBarController {
+    NSLog(@"后去了自定义的tabBarController");
+    return self.customTabBarController;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
