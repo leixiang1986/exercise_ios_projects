@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+LXBase.h"
 @class CustomTabbarController;
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isOnScreen;
 @property (nonatomic, assign) BOOL isFirstAppear;
 @property (nonatomic, weak) CustomTabbarController *customTabBarController;
+
+//子类可自定义
+- (void)backButtonClick:(id)sender NS_REQUIRES_SUPER;
+
 @end
 
 NS_ASSUME_NONNULL_END

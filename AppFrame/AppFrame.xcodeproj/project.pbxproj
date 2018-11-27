@@ -23,6 +23,7 @@
 		D38F26F621A7CEF20002FBA3 /* ViewControllerC.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F26F521A7CEF20002FBA3 /* ViewControllerC.m */; };
 		D38F26F921A7CF650002FBA3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F26F821A7CF650002FBA3 /* BaseViewController.m */; };
 		D3B7A22121AD2E7D00F67E0A /* ViewControllerD.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7A22021AD2E7D00F67E0A /* ViewControllerD.m */; };
+		D3B7A22421AD3FF500F67E0A /* UIViewController+LXBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7A22321AD3FF500F67E0A /* UIViewController+LXBase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		D3938EC421AB833400B52711 /* LXViewConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXViewConsts.h; sourceTree = "<group>"; };
 		D3B7A21F21AD2E7D00F67E0A /* ViewControllerD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerD.h; sourceTree = "<group>"; };
 		D3B7A22021AD2E7D00F67E0A /* ViewControllerD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerD.m; sourceTree = "<group>"; };
+		D3B7A22221AD3FF500F67E0A /* UIViewController+LXBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LXBase.h"; sourceTree = "<group>"; };
+		D3B7A22321AD3FF500F67E0A /* UIViewController+LXBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LXBase.m"; sourceTree = "<group>"; };
 		D4F94D40D163CE1ED9560701 /* libPods-AppFrame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppFrame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,6 +146,8 @@
 				D38F26EC21A7B9B50002FBA3 /* CustomTabbarController.m */,
 				D38F26F721A7CF650002FBA3 /* BaseViewController.h */,
 				D38F26F821A7CF650002FBA3 /* BaseViewController.m */,
+				D3B7A22221AD3FF500F67E0A /* UIViewController+LXBase.h */,
+				D3B7A22321AD3FF500F67E0A /* UIViewController+LXBase.m */,
 				D38F26EE21A7CEDE0002FBA3 /* ViewControllerA.h */,
 				D38F26EF21A7CEDE0002FBA3 /* ViewControllerA.m */,
 				D3B7A21F21AD2E7D00F67E0A /* ViewControllerD.h */,
@@ -372,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D38F26C621A7B84D0002FBA3 /* ViewController.m in Sources */,
+				D3B7A22421AD3FF500F67E0A /* UIViewController+LXBase.m in Sources */,
 				D38F26F921A7CF650002FBA3 /* BaseViewController.m in Sources */,
 				D38F26D121A7B8500002FBA3 /* main.m in Sources */,
 				D3B7A22121AD2E7D00F67E0A /* ViewControllerD.m in Sources */,

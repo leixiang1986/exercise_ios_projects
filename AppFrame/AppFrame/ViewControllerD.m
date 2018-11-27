@@ -19,11 +19,19 @@
     // Do any additional setup after loading the view.
     self.title = @"vcD";
     self.view.backgroundColor = [UIColor blueColor];
+    
+//    NSMutableArray *leftItems = [[NSMutableArray alloc] initWithArray:@[self.navigationItem.backBarButtonItem]];
+//    
+//    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:(UIBarButtonItemStylePlain) target:self action:NULL];
+//    [leftItems addObject:leftItem];
+//    self.navigationItem.leftBarButtonItems = leftItems;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     NSLog(@"%s",__func__);
+    //这里设置才会有滑动返回，导航栏跟随的效果
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 /*

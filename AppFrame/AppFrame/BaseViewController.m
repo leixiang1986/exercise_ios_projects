@@ -19,7 +19,12 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.isFirstAppear = YES;
-    
+    //统一设置返回按钮，去掉文字
+    self.navigationItem.hidesBackButton = YES;
+}
+
+- (void)backButtonClick:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (CustomTabbarController *)tabBarController {
