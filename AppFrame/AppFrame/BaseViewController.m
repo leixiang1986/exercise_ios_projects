@@ -21,6 +21,8 @@
     self.isFirstAppear = YES;
     //统一设置返回按钮，去掉文字
     self.navigationItem.hidesBackButton = YES;
+    //使用系统的返回按钮，没有标题
+//    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:(UIBarButtonItemStylePlain) target:self action:NULL];
 }
 
 - (void)backButtonClick:(id)sender {
