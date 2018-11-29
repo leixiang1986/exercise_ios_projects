@@ -1,18 +1,14 @@
 //
 //  AppDelegate.m
-//  BuglyExcercise
+//  NSNotificationExcercise
 //
-//  Created by leixiang on 2018/11/27.
+//  Created by leixiang on 2018/11/29.
 //  Copyright © 2018年 admin. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import <Bugly/Bugly.h>
 
-static NSString *const AppID = @"07769d0f72";
-static NSString *const AppKey = @"af6e44bd-d63c-4e18-8c66-84254fa9467a";
-
-@interface AppDelegate ()<BuglyDelegate>
+@interface AppDelegate ()
 
 @end
 
@@ -21,18 +17,9 @@ static NSString *const AppKey = @"af6e44bd-d63c-4e18-8c66-84254fa9467a";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    BuglyConfig *config = [[BuglyConfig alloc] init];
-    config.debugMode = YES;
-    config.reportLogLevel = BuglyLogLevelInfo;
-    [Bugly startWithAppId:AppID config:config];
-    
     return YES;
 }
 
-- (NSString * BLY_NULLABLE)attachmentForException:(NSException * BLY_NULLABLE)exception {
-    NSLog(@"%@",[exception description]);
-    return @"xxx";
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
