@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D35C654E21B1104100821A3B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35C654D21B1104100821A3B /* SecondViewController.m */; };
 		D3914BC621AE4448008128E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3914BC521AE4448008128E2 /* AppDelegate.m */; };
 		D3914BC921AE4448008128E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3914BC821AE4448008128E2 /* ViewController.m */; };
 		D3914BCC21AE4448008128E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3914BCA21AE4448008128E2 /* Main.storyboard */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D35C654C21B1104100821A3B /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		D35C654D21B1104100821A3B /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		D3914BC121AE4448008128E2 /* NSURLConnection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSURLConnection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3914BC421AE4448008128E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D3914BC521AE4448008128E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				D3914BC521AE4448008128E2 /* AppDelegate.m */,
 				D3914BC721AE4448008128E2 /* ViewController.h */,
 				D3914BC821AE4448008128E2 /* ViewController.m */,
+				D35C654C21B1104100821A3B /* SecondViewController.h */,
+				D35C654D21B1104100821A3B /* SecondViewController.m */,
 				D3914BCA21AE4448008128E2 /* Main.storyboard */,
 				D3914BCD21AE444A008128E2 /* Assets.xcassets */,
 				D3914BCF21AE444A008128E2 /* LaunchScreen.storyboard */,
@@ -203,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D35C654E21B1104100821A3B /* SecondViewController.m in Sources */,
 				D3914BC921AE4448008128E2 /* ViewController.m in Sources */,
 				D3914BD421AE444A008128E2 /* main.m in Sources */,
 				D3914BC621AE4448008128E2 /* AppDelegate.m in Sources */,

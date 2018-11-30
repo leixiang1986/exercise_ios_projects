@@ -49,40 +49,38 @@
 
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"%s",__func__);
+    NSLog(@"%s_%@",__func__,[NSThread currentThread]);
 }
 - (BOOL)connectionShouldUseCredentialStorage:(NSURLConnection *)connection {
-    NSLog(@"%s",__func__);
+    NSLog(@"%s_%@",__func__,[NSThread currentThread]);
     return NO;
 }
 - (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-    NSLog(@"%s",__func__);
+    NSLog(@"%s_%@",__func__,[NSThread currentThread]);
    [[challenge sender] continueWithoutCredentialForAuthenticationChallenge:challenge];
 }
 
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    NSLog(@"%s",__func__);
+    NSLog(@"%s_%@",__func__,[NSThread currentThread]);
     
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    NSLog(@"%s",__func__);
+    NSLog(@"%s_%@",__func__,[NSThread currentThread]);
     
 }
-
 
 - (void)connection:(NSURLConnection *)connection   didSendBodyData:(NSInteger)bytesWritten
  totalBytesWritten:(NSInteger)totalBytesWritten
 totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
-    NSLog(@"%s",__func__);
+    NSLog(@"%s_%@",__func__,[NSThread currentThread]);
     
 }
 
-
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     
-    NSLog(@"%s",__func__);
+    NSLog(@"%s_%@",__func__,[NSThread currentThread]);
 }
 
 
