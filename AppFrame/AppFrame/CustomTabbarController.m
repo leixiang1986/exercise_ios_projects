@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 #import "LXViewConsts.h"
 #import "Masonry.h"
+#import "LXViewConsts.h"
 
 //#import "ViewControllerA.h"
 //#import "ViewControllerB.h"
@@ -28,7 +29,11 @@
  self.navigationController.navigationItem(.rightBarButtonItem)此时设置的是当前控制器的导航栏的UINavigationItem
  */
 
-static CGFloat kTabbarHeight = 49;
+//static CGFloat kTabbarHeight = 49 + 29;
+
+
+
+#define kTabbarHeight ((IS_IPHONE_X==YES || IS_IPHONE_Xr ==YES || IS_IPHONE_Xs== YES || IS_IPHONE_Xs_Max== YES) ? 83.0 : 49.0)
 
 @interface CustomTabbarController ()<UITabBarDelegate>
 @property (nonatomic, strong, readwrite) UITabBar *tabBar;

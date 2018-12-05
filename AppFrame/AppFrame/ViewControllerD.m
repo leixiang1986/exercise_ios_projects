@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"vcD";
+    self.title = @"vcD 从没有导航栏push进入";
     self.view.backgroundColor = [UIColor blueColor];
     
 //    NSMutableArray *leftItems = [[NSMutableArray alloc] initWithArray:@[self.navigationItem.backBarButtonItem]];

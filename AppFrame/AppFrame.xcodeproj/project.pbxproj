@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048FB82A21B77D900097DC9A /* VCBPresentVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FB82921B77D900097DC9A /* VCBPresentVCViewController.m */; };
 		835407BADC3DDA144847A448 /* libPods-AppFrameUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B85BE1FE0CAE17F188E4F3 /* libPods-AppFrameUITests.a */; };
 		A22D6E8C5ABE62F1CCEF5D6A /* libPods-AppFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F94D40D163CE1ED9560701 /* libPods-AppFrame.a */; };
 		D38F26C321A7B84D0002FBA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F26C221A7B84D0002FBA3 /* AppDelegate.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		048FB82821B77D900097DC9A /* VCBPresentVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCBPresentVCViewController.h; sourceTree = "<group>"; };
+		048FB82921B77D900097DC9A /* VCBPresentVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCBPresentVCViewController.m; sourceTree = "<group>"; };
 		13B85BE1FE0CAE17F188E4F3 /* libPods-AppFrameUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppFrameUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C0B84C2344AD4253279CCA6 /* Pods-AppFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppFrame/Pods-AppFrame.release.xcconfig"; sourceTree = "<group>"; };
 		3517AE92F2ECF3399B7C31F8 /* Pods-AppFrameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFrameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppFrameUITests/Pods-AppFrameUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				D3B7A22021AD2E7D00F67E0A /* ViewControllerD.m */,
 				D38F26F121A7CEE80002FBA3 /* ViewControllerB.h */,
 				D38F26F221A7CEE80002FBA3 /* ViewControllerB.m */,
+				048FB82821B77D900097DC9A /* VCBPresentVCViewController.h */,
+				048FB82921B77D900097DC9A /* VCBPresentVCViewController.m */,
 				D38F26F421A7CEF20002FBA3 /* ViewControllerC.h */,
 				D38F26F521A7CEF20002FBA3 /* ViewControllerC.m */,
 				D38F26C421A7B84D0002FBA3 /* ViewController.h */,
@@ -379,6 +384,7 @@
 				D38F26C621A7B84D0002FBA3 /* ViewController.m in Sources */,
 				D3B7A22421AD3FF500F67E0A /* UIViewController+LXBase.m in Sources */,
 				D38F26F921A7CF650002FBA3 /* BaseViewController.m in Sources */,
+				048FB82A21B77D900097DC9A /* VCBPresentVCViewController.m in Sources */,
 				D38F26D121A7B8500002FBA3 /* main.m in Sources */,
 				D3B7A22121AD2E7D00F67E0A /* ViewControllerD.m in Sources */,
 				D38F26F021A7CEDE0002FBA3 /* ViewControllerA.m in Sources */,
