@@ -25,7 +25,8 @@
 - (NSArray *)titleList {
     if (!_titleList) {
         _titleList = @[@"1-方法中的block是否循环-是否可以重复回调",
-                      @"2-资源中两个线程分别持有对方需要的锁造成死锁"];
+                      @"2-资源中两个线程分别持有对方需要的锁造成死锁",
+                       @"3-信号量同步数据"];
     }
     return _titleList;
 }

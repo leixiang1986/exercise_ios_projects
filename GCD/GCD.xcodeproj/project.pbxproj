@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048FB82D21B782AC0097DC9A /* SemaphoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FB82C21B782AC0097DC9A /* SemaphoreViewController.m */; };
 		D3C0A26721A4F23300810698 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C0A26621A4F23300810698 /* AppDelegate.m */; };
 		D3C0A26A21A4F23300810698 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C0A26921A4F23300810698 /* ViewController.m */; };
 		D3C0A26D21A4F23300810698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C0A26B21A4F23300810698 /* Main.storyboard */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		048FB82B21B782AC0097DC9A /* SemaphoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SemaphoreViewController.h; sourceTree = "<group>"; };
+		048FB82C21B782AC0097DC9A /* SemaphoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemaphoreViewController.m; sourceTree = "<group>"; };
 		D3C0A26221A4F23300810698 /* GCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C0A26521A4F23300810698 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D3C0A26621A4F23300810698 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				D3C0A29021A4F47F00810698 /* BlockInMethodVC.m */,
 				D3C0A2CB21A52D2700810698 /* BlockInMethodObj.h */,
 				D3C0A2CC21A52D2700810698 /* BlockInMethodObj.m */,
+				048FB82B21B782AC0097DC9A /* SemaphoreViewController.h */,
+				048FB82C21B782AC0097DC9A /* SemaphoreViewController.m */,
 				D3C0A26B21A4F23300810698 /* Main.storyboard */,
 				D3C0A26E21A4F23500810698 /* Assets.xcassets */,
 				D3C0A27021A4F23500810698 /* LaunchScreen.storyboard */,
@@ -230,6 +235,7 @@
 				D3C0A29121A4F47F00810698 /* BlockInMethodVC.m in Sources */,
 				D3C0A2CD21A52D2700810698 /* BlockInMethodObj.m in Sources */,
 				D3C0A26721A4F23300810698 /* AppDelegate.m in Sources */,
+				048FB82D21B782AC0097DC9A /* SemaphoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
