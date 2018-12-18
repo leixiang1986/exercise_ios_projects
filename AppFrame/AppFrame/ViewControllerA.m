@@ -49,6 +49,7 @@
 
 - (void)buttonClick:(id)sender {
     ViewControllerD *vcD = [[ViewControllerD alloc] init];
+    vcD.title = @"从有导航栏的vc进入";
     [self.navigationController pushViewController:vcD animated:YES];
 }
 

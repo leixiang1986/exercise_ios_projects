@@ -37,6 +37,7 @@
 
 - (void)buttonClick:(id)sender {
     ViewControllerD *vcD = [[ViewControllerD alloc] init];
+    vcD.title = @"从没有导航栏的VCpush";
     [self.navigationController pushViewController:vcD animated:YES];
 }
 

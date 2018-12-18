@@ -1,28 +1,35 @@
 //
-//  ViewController.m
+//  SecondViewController.m
 //  GCDBarrier实现单写多读
 //
 //  Created by mac on 2018/12/11.
 //  Copyright © 2018年 mac. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SecondViewController.h"
+#import <pthread.h>
 
-@interface ViewController ()
-@property (nonatomic, strong) NSMutableArray *data;
-@property (nonatomic, strong) dispatch_queue_t queue;
+@interface SecondViewController ()
+{
+    pthread_rwlock_t lock;
+}
 @end
 
-@implementation ViewController
+@implementation SecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view.
+    pthread_rwlock_init(&lock, NULL);
+ 
     
     
-    _queue = dispatch_queue_create("concurrent_queue", DISPATCH_QUEUE_CONCURRENT);
     
     
+}
+
+- (void)dealloc {
+    pthread_rwlock_destroy(&lock);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -37,25 +44,25 @@
             [self write];
         });
     }
-
 }
 
-
 - (void)read {
-    dispatch_async(_queue, ^{
-        sleep(0.3);
-        NSLog(@"读取数据:%@",[NSThread currentThread]);
-    });
-    sleep(0.2);
+    sleep(0.25);
+    pthread_rwlock_rdlock(&lock);
+    sleep(0.3);
+    NSLog(@"read %@",[NSThread currentThread]);
+    pthread_rwlock_unlock(&lock);
 }
 
 - (void)write {
     sleep(0.3);
-    dispatch_barrier_async(_queue, ^{
-        sleep(0.5);
-        NSLog(@"写入数据:%@",[NSThread currentThread]);
-    });
+    pthread_rwlock_wrlock(&lock);
+    sleep(1);
+    NSLog(@"write %@",[NSThread currentThread]);
+    pthread_rwlock_unlock(&lock);
 }
+
+
 
 
 

@@ -15,6 +15,7 @@
 		0466B3EC21BF5B86004AFA71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0466B3EB21BF5B86004AFA71 /* main.m */; };
 		0466B3F621BF5B86004AFA71 /* GCDBarrier______Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0466B3F521BF5B86004AFA71 /* GCDBarrier______Tests.m */; };
 		0466B40121BF5B86004AFA71 /* GCDBarrier______UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0466B40021BF5B86004AFA71 /* GCDBarrier______UITests.m */; };
+		0466B44E21BFAC1C004AFA71 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0466B44D21BFAC1C004AFA71 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		0466B3FC21BF5B86004AFA71 /* GCDBarrier实现单写多读UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GCDBarrier实现单写多读UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0466B40021BF5B86004AFA71 /* GCDBarrier______UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GCDBarrier______UITests.m"; sourceTree = "<group>"; };
 		0466B40221BF5B86004AFA71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0466B44C21BFAC1C004AFA71 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		0466B44D21BFAC1C004AFA71 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				0466B3DD21BF5B84004AFA71 /* AppDelegate.m */,
 				0466B3DF21BF5B84004AFA71 /* ViewController.h */,
 				0466B3E021BF5B84004AFA71 /* ViewController.m */,
+				0466B44C21BFAC1C004AFA71 /* SecondViewController.h */,
+				0466B44D21BFAC1C004AFA71 /* SecondViewController.m */,
 				0466B3E221BF5B84004AFA71 /* Main.storyboard */,
 				0466B3E521BF5B86004AFA71 /* Assets.xcassets */,
 				0466B3E721BF5B86004AFA71 /* LaunchScreen.storyboard */,
@@ -262,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0466B44E21BFAC1C004AFA71 /* SecondViewController.m in Sources */,
 				0466B3E121BF5B84004AFA71 /* ViewController.m in Sources */,
 				0466B3EC21BF5B86004AFA71 /* main.m in Sources */,
 				0466B3DE21BF5B84004AFA71 /* AppDelegate.m in Sources */,
