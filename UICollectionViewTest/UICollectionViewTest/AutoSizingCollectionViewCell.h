@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AutoSizingCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *label;
-
+@property (nonatomic, copy) CGSize(^sizeBlock)(CGSize size);
 @end
 
 NS_ASSUME_NONNULL_END
