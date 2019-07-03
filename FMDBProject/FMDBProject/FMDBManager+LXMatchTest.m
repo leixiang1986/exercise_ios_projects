@@ -19,7 +19,6 @@
     
     [self.dbQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
         
-        
         BOOL ret = NO;
         NSError *error = nil;
         NSString *selectSql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE %@=?;",kMatchTable,kMatchTableID];
