@@ -8,15 +8,38 @@
 
 #import "CustomOperation.h"
 
-@interface CustomOperation ()
-//@property (no)
+@interface CustomOperation (){
+  BOOL finished;
+  BOOL executing;
+}
 @end
 
 @implementation CustomOperation
-- (instancetype)initWithModel:(TestConfigModel *)model {
-    if (self = [super init]) {
-//        self
-    }
-    return self;
+- (void)start {
+  [NSThread detachNewThreadWithBlock:^{
+    //执行的任务。。。
+    [NSThread sleepForTimeInterval:1];
+
+    NSLog(@"task==");
+//添加监听，外部添加completionBlock监听执行结束
+    [self willChangeValueForKey:@"executing"];
+    [self willChangeValueForKey:@"finished"];
+    finished = YES;
+    executing = NO;
+    [self didChangeValueForKey:@"finished"];
+    [self didChangeValueForKey:@"executing"];
+  }];
+  NSLog(@"start==");
+
+  [self willChangeValueForKey:@"executing"];
+    executing = YES;
+    [self didChangeValueForKey:@"executing"];
 }
-@end
+
+- (BOOL)isFinished {
+  return finished;
+}
+
+-  (BOOL)isExecuting {
+  return executing;
+}@end

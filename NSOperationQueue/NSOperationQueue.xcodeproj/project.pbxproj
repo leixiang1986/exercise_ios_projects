@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0436747023EF08F500F8BE4B /* ConcurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0436746F23EF08F500F8BE4B /* ConcurrentOperation.m */; };
+		045DB0EE23EEA21800C6F51B /* CustomOperation1.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DB0ED23EEA21800C6F51B /* CustomOperation1.m */; };
+		045DB0F123EEB23900C6F51B /* NonCurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DB0F023EEB23900C6F51B /* NonCurrentOperation.m */; };
 		D3C0A2A321A4FE4000810698 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C0A2A221A4FE4000810698 /* AppDelegate.m */; };
 		D3C0A2A621A4FE4000810698 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C0A2A521A4FE4000810698 /* ViewController.m */; };
 		D3C0A2A921A4FE4000810698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C0A2A721A4FE4000810698 /* Main.storyboard */; };
@@ -29,6 +32,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0436746E23EF08F500F8BE4B /* ConcurrentOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConcurrentOperation.h; sourceTree = "<group>"; };
+		0436746F23EF08F500F8BE4B /* ConcurrentOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConcurrentOperation.m; sourceTree = "<group>"; };
+		045DB0EC23EEA21800C6F51B /* CustomOperation1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomOperation1.h; sourceTree = "<group>"; };
+		045DB0ED23EEA21800C6F51B /* CustomOperation1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomOperation1.m; sourceTree = "<group>"; };
+		045DB0EF23EEB23900C6F51B /* NonCurrentOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NonCurrentOperation.h; sourceTree = "<group>"; };
+		045DB0F023EEB23900C6F51B /* NonCurrentOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NonCurrentOperation.m; sourceTree = "<group>"; };
 		D3C0A29E21A4FE4000810698 /* NSOperationQueue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSOperationQueue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C0A2A121A4FE4000810698 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D3C0A2A221A4FE4000810698 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,6 +102,12 @@
 				D3C0A2A521A4FE4000810698 /* ViewController.m */,
 				D3C0A2C521A503C900810698 /* CustomOperation.h */,
 				D3C0A2C621A503C900810698 /* CustomOperation.m */,
+				045DB0EF23EEB23900C6F51B /* NonCurrentOperation.h */,
+				045DB0F023EEB23900C6F51B /* NonCurrentOperation.m */,
+				0436746E23EF08F500F8BE4B /* ConcurrentOperation.h */,
+				0436746F23EF08F500F8BE4B /* ConcurrentOperation.m */,
+				045DB0EC23EEA21800C6F51B /* CustomOperation1.h */,
+				045DB0ED23EEA21800C6F51B /* CustomOperation1.m */,
 				D3C0A2C821A504CC00810698 /* TestConfigModel.h */,
 				D3C0A2C921A504CD00810698 /* TestConfigModel.m */,
 				D3C0A2A721A4FE4000810698 /* Main.storyboard */,
@@ -215,6 +230,9 @@
 			files = (
 				D3C0A2C721A503C900810698 /* CustomOperation.m in Sources */,
 				D3C0A2A621A4FE4000810698 /* ViewController.m in Sources */,
+				045DB0F123EEB23900C6F51B /* NonCurrentOperation.m in Sources */,
+				045DB0EE23EEA21800C6F51B /* CustomOperation1.m in Sources */,
+				0436747023EF08F500F8BE4B /* ConcurrentOperation.m in Sources */,
 				D3C0A2CA21A504CD00810698 /* TestConfigModel.m in Sources */,
 				D3C0A2B121A4FE4200810698 /* main.m in Sources */,
 				D3C0A2A321A4FE4000810698 /* AppDelegate.m in Sources */,

@@ -11,8 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CustomOperation : NSObject
-- (instancetype)initWithModel:(TestConfigModel *)model;
+@interface CustomOperation : NSOperation
+//- (instancetype)initWithModel:(TestConfigModel *)model;
 @end
 
 NS_ASSUME_NONNULL_END
