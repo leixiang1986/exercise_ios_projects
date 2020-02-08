@@ -30,6 +30,7 @@
     //需要解决的两个问题：
     //1,设置圆角，通过shapeLayer作为mask，可以设置圆角,但在此基础上设置view的圆角是无效的
     //2,添加圆角，在底部再通过一个shapeLayer添加阴影，达到效果
+    //另外注意：设置shadowLayer的背景色时，用fillColor
     
     UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(180, 60, 200, 100)];
     view2.backgroundColor = [UIColor redColor];
