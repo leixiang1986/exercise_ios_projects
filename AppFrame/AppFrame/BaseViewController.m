@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface BaseViewController ()
+@interface BaseViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -25,6 +25,31 @@
 //    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:(UIBarButtonItemStylePlain) target:self action:NULL];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (!self.notPanPop) {
+            self.interactivePopGestureRecognizer.delegate = self;
+        }
+        self.interactivePopGestureRecognizer.enabled = !_notPanPop;
+    });
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    //关闭主界面的右滑返回
+    if (self.navigationController.viewControllers.count == 1) {
+        return NO;
+    }
+    if (!self.notPop) {
+        if (self.gestureShouldPopBlock) {
+            self.gestureShouldPopBlock();
+        }
+    }
+    
+    return !self.notPop;
+}
+
 - (void)backButtonClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -32,6 +57,31 @@
 - (CustomTabbarController *)tabBarController {
     NSLog(@"后去了自定义的tabBarController");
     return self.customTabBarController;
+}
+
+///设置白色导航栏，黑色返回键，黑色标题，蓝色右侧按钮
+- (void)setupNaviBarWhiteBarBlackTitleMainItem {
+    UINavigationBar *bar = self.navigationController.navigationBar;
+    [bar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+    UIBarButtonItem *backItem = self.navigationItem.leftBarButtonItem;
+    ///白色底黑色返回按钮
+    UIImage *image = [[UIImage imageNamed:@"goBack"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+    [backItem setImage: image];
+
+    [bar setShadowImage:[UIImage imageWithColor:[UIColor clearColor]]];
+    
+    // 标题
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[NSFontAttributeName] = [UIFont systemFontOfSize:18];
+    dict[NSForegroundColorAttributeName] = [UIColor hexStringToColor:@"333333"];
+    [bar setTitleTextAttributes:dict];
+
+    // 导航栏Item
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    NSMutableDictionary *itemDict = [NSMutableDictionary dictionary];
+    itemDict[NSFontAttributeName] = [UIFont systemFontOfSize:16];
+    itemDict[NSForegroundColorAttributeName] = SureThemeColor;
+    [item setTitleTextAttributes:itemDict forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

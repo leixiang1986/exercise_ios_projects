@@ -11,12 +11,12 @@
 
 @implementation UIViewController (LXBase)
 @dynamic reenterable;
-- (void)setReenterable:(BOOL)able {
-    objc_setAssociatedObject(self, @selector(reenterable), @(able), OBJC_ASSOCIATION_RETAIN);
+- (void)setReEnterable:(BOOL)able {
+    objc_setAssociatedObject(self, @selector(reEnterable), @(able), OBJC_ASSOCIATION_RETAIN);
 }
 
-- (BOOL)reenterable {
-    return [objc_getAssociatedObject(self, @selector(reenterable)) boolValue];
+- (BOOL)reEnterable {
+    return [objc_getAssociatedObject(self, @selector(reEnterable)) boolValue];
 }
 
 @end

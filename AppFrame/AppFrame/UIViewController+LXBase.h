@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (LXBase)
-@property (nonatomic, assign, getter=isReenterable) BOOL reenterable;
+@property (nonatomic, assign, getter=isReEnterable) BOOL reEnterable;
 @end
 
 NS_ASSUME_NONNULL_END
