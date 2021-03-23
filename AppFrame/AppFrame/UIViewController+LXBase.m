@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 
 @implementation UIViewController (LXBase)
-@dynamic reenterable;
+@dynamic reEnterable;
 - (void)setReEnterable:(BOOL)able {
     objc_setAssociatedObject(self, @selector(reEnterable), @(able), OBJC_ASSOCIATION_RETAIN);
 }

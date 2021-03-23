@@ -7,6 +7,9 @@
 //
 
 #import "BaseViewController.h"
+#import "UIImage+Extension.h"
+#import "UIColor+Extension.h"
+#import "Define.h"
 
 @interface BaseViewController ()<UIGestureRecognizerDelegate>
 
@@ -25,13 +28,20 @@
 //    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:(UIBarButtonItemStylePlain) target:self action:NULL];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.isOnScreen = NO;
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    self.isOnScreen = YES;
+    WEAKSELF(weakSelf)
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (!self.notPanPop) {
-            self.interactivePopGestureRecognizer.delegate = self;
+        if (!weakSelf.notPanPop) {
+            weakSelf.navigationController.interactivePopGestureRecognizer.delegate = weakSelf;
         }
-        self.interactivePopGestureRecognizer.enabled = !_notPanPop;
+        weakSelf.navigationController.interactivePopGestureRecognizer.enabled = !weakSelf.notPanPop;
     });
 }
 
@@ -41,13 +51,13 @@
     if (self.navigationController.viewControllers.count == 1) {
         return NO;
     }
-    if (!self.notPop) {
+    if (!self.notPanPop) {
         if (self.gestureShouldPopBlock) {
             self.gestureShouldPopBlock();
         }
     }
     
-    return !self.notPop;
+    return !self.notPanPop;
 }
 
 - (void)backButtonClick:(id)sender {
@@ -73,25 +83,17 @@
     // 标题
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     dict[NSFontAttributeName] = [UIFont systemFontOfSize:18];
-    dict[NSForegroundColorAttributeName] = [UIColor hexStringToColor:@"333333"];
+    dict[NSForegroundColorAttributeName] = [UIColor colorWithHexString:@"333333"];
     [bar setTitleTextAttributes:dict];
 
     // 导航栏Item
     UIBarButtonItem *item = [UIBarButtonItem appearance];
     NSMutableDictionary *itemDict = [NSMutableDictionary dictionary];
     itemDict[NSFontAttributeName] = [UIFont systemFontOfSize:16];
-    itemDict[NSForegroundColorAttributeName] = SureThemeColor;
+    itemDict[NSForegroundColorAttributeName] = [UIColor colorWithHexString:@"333333"];
     [item setTitleTextAttributes:itemDict forState:UIControlStateNormal];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    self.isOnScreen = YES;
-}
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    self.isOnScreen = NO;
-}
 
 @end

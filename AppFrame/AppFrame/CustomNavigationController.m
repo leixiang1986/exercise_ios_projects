@@ -8,6 +8,7 @@
 
 #import "CustomNavigationController.h"
 #import "UIViewController+LXBase.h"
+#import "UIImage+Extension.h"
 
 @interface CustomNavigationController ()<UIGestureRecognizerDelegate>
 
@@ -59,7 +60,7 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     //如果类型可重入或者不是同一种类型的控制器才可以push
-    if ([viewController isMemberOfClass:[self.viewControllers.lastObject class]] && !viewController.reenterable) {
+    if ([viewController isMemberOfClass:[self.viewControllers.lastObject class]] && !viewController.reEnterable) {
         NSAssert(NO, @"相同类型，不可重入");
         return ;
     }

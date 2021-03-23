@@ -26,6 +26,7 @@
 		D3B7A22121AD2E7D00F67E0A /* ViewControllerD.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7A22021AD2E7D00F67E0A /* ViewControllerD.m */; };
 		D3B7A22421AD3FF500F67E0A /* UIViewController+LXBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7A22321AD3FF500F67E0A /* UIViewController+LXBase.m */; };
 		D3CCB830260989E60086D063 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CCB82F260989E60086D063 /* UIImage+Extension.m */; };
+		D3CCB83526098D9B0086D063 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CCB83426098D9B0086D063 /* UIColor+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		3517AE92F2ECF3399B7C31F8 /* Pods-AppFrameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFrameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppFrameUITests/Pods-AppFrameUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D5394A5901FE38C2D1D3B34 /* Pods-AppFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFrame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppFrame/Pods-AppFrame.debug.xcconfig"; sourceTree = "<group>"; };
 		9F294BC7ADEFADAF0F5912DA /* Pods-AppFrameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFrameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppFrameUITests/Pods-AppFrameUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D33EA5652609CCFC008B4710 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		D38F26BE21A7B84D0002FBA3 /* AppFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38F26C121A7B84D0002FBA3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D38F26C221A7B84D0002FBA3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -78,6 +80,8 @@
 		D3B7A22321AD3FF500F67E0A /* UIViewController+LXBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LXBase.m"; sourceTree = "<group>"; };
 		D3CCB82E260989E60086D063 /* UIImage+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		D3CCB82F260989E60086D063 /* UIImage+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		D3CCB83326098D9B0086D063 /* UIColor+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		D3CCB83426098D9B0086D063 /* UIColor+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
 		D4F94D40D163CE1ED9560701 /* libPods-AppFrame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppFrame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -167,6 +171,7 @@
 				D38F26C421A7B84D0002FBA3 /* ViewController.h */,
 				D38F26C521A7B84D0002FBA3 /* ViewController.m */,
 				D3938EC421AB833400B52711 /* LXViewConsts.h */,
+				D33EA5652609CCFC008B4710 /* Define.h */,
 				D3CCB82D260989CC0086D063 /* Category */,
 				D38F26C721A7B84D0002FBA3 /* Main.storyboard */,
 				D38F26CA21A7B8500002FBA3 /* Assets.xcassets */,
@@ -191,6 +196,8 @@
 			children = (
 				D3CCB82E260989E60086D063 /* UIImage+Extension.h */,
 				D3CCB82F260989E60086D063 /* UIImage+Extension.m */,
+				D3CCB83326098D9B0086D063 /* UIColor+Extension.h */,
+				D3CCB83426098D9B0086D063 /* UIColor+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -397,6 +404,7 @@
 				D38F26C621A7B84D0002FBA3 /* ViewController.m in Sources */,
 				D3B7A22421AD3FF500F67E0A /* UIViewController+LXBase.m in Sources */,
 				D38F26F921A7CF650002FBA3 /* BaseViewController.m in Sources */,
+				D3CCB83526098D9B0086D063 /* UIColor+Extension.m in Sources */,
 				048FB82A21B77D900097DC9A /* VCBPresentVCViewController.m in Sources */,
 				D38F26D121A7B8500002FBA3 /* main.m in Sources */,
 				D3B7A22121AD2E7D00F67E0A /* ViewControllerD.m in Sources */,
