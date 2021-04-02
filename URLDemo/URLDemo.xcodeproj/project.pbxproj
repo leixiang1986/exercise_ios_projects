@@ -15,6 +15,7 @@
 		040D4E3321CC736A00F6331A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D4E3221CC736A00F6331A /* main.m */; };
 		040D4E3D21CC736A00F6331A /* URLDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D4E3C21CC736A00F6331A /* URLDemoTests.m */; };
 		040D4E4821CC736A00F6331A /* URLDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D4E4721CC736A00F6331A /* URLDemoUITests.m */; };
+		D3C5BC5B26116F3D00447B8C /* jump.js in Resources */ = {isa = PBXBuildFile; fileRef = D3C5BC5A26116F3D00447B8C /* jump.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		040D4E4321CC736A00F6331A /* URLDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URLDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		040D4E4721CC736A00F6331A /* URLDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLDemoUITests.m; sourceTree = "<group>"; };
 		040D4E4921CC736A00F6331A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3C5BC5A26116F3D00447B8C /* jump.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jump.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				040D4E2421CC736800F6331A /* AppDelegate.m */,
 				040D4E2621CC736800F6331A /* ViewController.h */,
 				040D4E2721CC736800F6331A /* ViewController.m */,
+				D3C5BC5A26116F3D00447B8C /* jump.js */,
 				040D4E2921CC736800F6331A /* Main.storyboard */,
 				040D4E2C21CC736A00F6331A /* Assets.xcassets */,
 				040D4E2E21CC736A00F6331A /* LaunchScreen.storyboard */,
@@ -237,6 +240,7 @@
 			files = (
 				040D4E3021CC736A00F6331A /* LaunchScreen.storyboard in Resources */,
 				040D4E2D21CC736A00F6331A /* Assets.xcassets in Resources */,
+				D3C5BC5B26116F3D00447B8C /* jump.js in Resources */,
 				040D4E2B21CC736800F6331A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

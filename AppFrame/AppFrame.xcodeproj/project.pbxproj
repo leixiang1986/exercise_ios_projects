@@ -10,6 +10,7 @@
 		048FB82A21B77D900097DC9A /* VCBPresentVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FB82921B77D900097DC9A /* VCBPresentVCViewController.m */; };
 		835407BADC3DDA144847A448 /* libPods-AppFrameUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B85BE1FE0CAE17F188E4F3 /* libPods-AppFrameUITests.a */; };
 		A22D6E8C5ABE62F1CCEF5D6A /* libPods-AppFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F94D40D163CE1ED9560701 /* libPods-AppFrame.a */; };
+		D34E8577261460E900A93A7F /* UMPAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D34E8576261460E900A93A7F /* UMPAsyncOperation.m */; };
 		D38F26C321A7B84D0002FBA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F26C221A7B84D0002FBA3 /* AppDelegate.m */; };
 		D38F26C621A7B84D0002FBA3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F26C521A7B84D0002FBA3 /* ViewController.m */; };
 		D38F26C921A7B84D0002FBA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38F26C721A7B84D0002FBA3 /* Main.storyboard */; };
@@ -27,6 +28,11 @@
 		D3B7A22421AD3FF500F67E0A /* UIViewController+LXBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7A22321AD3FF500F67E0A /* UIViewController+LXBase.m */; };
 		D3CCB830260989E60086D063 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CCB82F260989E60086D063 /* UIImage+Extension.m */; };
 		D3CCB83526098D9B0086D063 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CCB83426098D9B0086D063 /* UIColor+Extension.m */; };
+		D3E7D71E260B11D4004EDC4E /* UMPAuthorizationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E7D71D260B11D4004EDC4E /* UMPAuthorizationTool.m */; };
+		D3E7D728260B121E004EDC4E /* UMPNoMenuTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E7D723260B121E004EDC4E /* UMPNoMenuTextView.m */; };
+		D3E7D729260B121E004EDC4E /* UMPProtocolView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E7D726260B121E004EDC4E /* UMPProtocolView.m */; };
+		D3E7D72A260B121E004EDC4E /* UMPEasyAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E7D727260B121E004EDC4E /* UMPEasyAlert.m */; };
+		D3E7D730260B1257004EDC4E /* UMPProtocolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E7D72E260B1257004EDC4E /* UMPProtocolModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,8 @@
 		9D5394A5901FE38C2D1D3B34 /* Pods-AppFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFrame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppFrame/Pods-AppFrame.debug.xcconfig"; sourceTree = "<group>"; };
 		9F294BC7ADEFADAF0F5912DA /* Pods-AppFrameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFrameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppFrameUITests/Pods-AppFrameUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D33EA5652609CCFC008B4710 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		D34E8575261460E900A93A7F /* UMPAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMPAsyncOperation.h; sourceTree = "<group>"; };
+		D34E8576261460E900A93A7F /* UMPAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMPAsyncOperation.m; sourceTree = "<group>"; };
 		D38F26BE21A7B84D0002FBA3 /* AppFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38F26C121A7B84D0002FBA3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D38F26C221A7B84D0002FBA3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,6 +90,16 @@
 		D3CCB82F260989E60086D063 /* UIImage+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		D3CCB83326098D9B0086D063 /* UIColor+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
 		D3CCB83426098D9B0086D063 /* UIColor+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		D3E7D71C260B11D4004EDC4E /* UMPAuthorizationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMPAuthorizationTool.h; sourceTree = "<group>"; };
+		D3E7D71D260B11D4004EDC4E /* UMPAuthorizationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMPAuthorizationTool.m; sourceTree = "<group>"; };
+		D3E7D722260B121E004EDC4E /* UMPEasyAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMPEasyAlert.h; sourceTree = "<group>"; };
+		D3E7D723260B121E004EDC4E /* UMPNoMenuTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMPNoMenuTextView.m; sourceTree = "<group>"; };
+		D3E7D724260B121E004EDC4E /* UMPProtocolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMPProtocolView.h; sourceTree = "<group>"; };
+		D3E7D725260B121E004EDC4E /* UMPNoMenuTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMPNoMenuTextView.h; sourceTree = "<group>"; };
+		D3E7D726260B121E004EDC4E /* UMPProtocolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMPProtocolView.m; sourceTree = "<group>"; };
+		D3E7D727260B121E004EDC4E /* UMPEasyAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMPEasyAlert.m; sourceTree = "<group>"; };
+		D3E7D72E260B1257004EDC4E /* UMPProtocolModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMPProtocolModel.m; sourceTree = "<group>"; };
+		D3E7D72F260B1257004EDC4E /* UMPProtocolModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMPProtocolModel.h; sourceTree = "<group>"; };
 		D4F94D40D163CE1ED9560701 /* libPods-AppFrame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppFrame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,6 +166,7 @@
 		D38F26C021A7B84D0002FBA3 /* AppFrame */ = {
 			isa = PBXGroup;
 			children = (
+				D3E7D71B260B11C0004EDC4E /* common */,
 				D38F26C121A7B84D0002FBA3 /* AppDelegate.h */,
 				D38F26C221A7B84D0002FBA3 /* AppDelegate.m */,
 				D38F26E521A7B9490002FBA3 /* CustomNavigationController.h */,
@@ -202,6 +221,41 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		D3E7D71B260B11C0004EDC4E /* common */ = {
+			isa = PBXGroup;
+			children = (
+				D3E7D72D260B1233004EDC4E /* Model */,
+				D3E7D721260B120B004EDC4E /* View */,
+				D3E7D71C260B11D4004EDC4E /* UMPAuthorizationTool.h */,
+				D3E7D71D260B11D4004EDC4E /* UMPAuthorizationTool.m */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		D3E7D721260B120B004EDC4E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3E7D722260B121E004EDC4E /* UMPEasyAlert.h */,
+				D3E7D727260B121E004EDC4E /* UMPEasyAlert.m */,
+				D3E7D725260B121E004EDC4E /* UMPNoMenuTextView.h */,
+				D3E7D723260B121E004EDC4E /* UMPNoMenuTextView.m */,
+				D3E7D724260B121E004EDC4E /* UMPProtocolView.h */,
+				D3E7D726260B121E004EDC4E /* UMPProtocolView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3E7D72D260B1233004EDC4E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D34E8575261460E900A93A7F /* UMPAsyncOperation.h */,
+				D34E8576261460E900A93A7F /* UMPAsyncOperation.m */,
+				D3E7D72F260B1257004EDC4E /* UMPProtocolModel.h */,
+				D3E7D72E260B1257004EDC4E /* UMPProtocolModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,8 +267,6 @@
 				D38F26BA21A7B84D0002FBA3 /* Sources */,
 				D38F26BB21A7B84D0002FBA3 /* Frameworks */,
 				D38F26BC21A7B84D0002FBA3 /* Resources */,
-				DACFEDFE05D57E8D5DF9C31A /* [CP] Embed Pods Frameworks */,
-				F56F445870B1F999AC4A56C4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,8 +285,6 @@
 				D38F26D221A7B8500002FBA3 /* Sources */,
 				D38F26D321A7B8500002FBA3 /* Frameworks */,
 				D38F26D421A7B8500002FBA3 /* Resources */,
-				E55A6B3A55A4AD4A26DB9B54 /* [CP] Embed Pods Frameworks */,
-				9738ECD5B6E528560D89DEA6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -310,28 +360,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppFrameUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9738ECD5B6E528560D89DEA6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppFrameUITests/Pods-AppFrameUITests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D81814A60C08FCBE6A2DAD90 /* [CP] Check Pods Manifest.lock */ = {
@@ -340,58 +378,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppFrame-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DACFEDFE05D57E8D5DF9C31A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppFrame/Pods-AppFrame-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E55A6B3A55A4AD4A26DB9B54 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppFrameUITests/Pods-AppFrameUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F56F445870B1F999AC4A56C4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppFrame/Pods-AppFrame-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -403,18 +399,24 @@
 			files = (
 				D38F26C621A7B84D0002FBA3 /* ViewController.m in Sources */,
 				D3B7A22421AD3FF500F67E0A /* UIViewController+LXBase.m in Sources */,
+				D3E7D728260B121E004EDC4E /* UMPNoMenuTextView.m in Sources */,
 				D38F26F921A7CF650002FBA3 /* BaseViewController.m in Sources */,
 				D3CCB83526098D9B0086D063 /* UIColor+Extension.m in Sources */,
 				048FB82A21B77D900097DC9A /* VCBPresentVCViewController.m in Sources */,
 				D38F26D121A7B8500002FBA3 /* main.m in Sources */,
+				D3E7D729260B121E004EDC4E /* UMPProtocolView.m in Sources */,
 				D3B7A22121AD2E7D00F67E0A /* ViewControllerD.m in Sources */,
 				D38F26F021A7CEDE0002FBA3 /* ViewControllerA.m in Sources */,
 				D38F26E721A7B9490002FBA3 /* CustomNavigationController.m in Sources */,
+				D3E7D71E260B11D4004EDC4E /* UMPAuthorizationTool.m in Sources */,
 				D3CCB830260989E60086D063 /* UIImage+Extension.m in Sources */,
+				D3E7D72A260B121E004EDC4E /* UMPEasyAlert.m in Sources */,
 				D38F26C321A7B84D0002FBA3 /* AppDelegate.m in Sources */,
+				D34E8577261460E900A93A7F /* UMPAsyncOperation.m in Sources */,
 				D38F26F321A7CEE80002FBA3 /* ViewControllerB.m in Sources */,
 				D38F26F621A7CEF20002FBA3 /* ViewControllerC.m in Sources */,
 				D38F26ED21A7B9B50002FBA3 /* CustomTabbarController.m in Sources */,
+				D3E7D730260B1257004EDC4E /* UMPProtocolModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

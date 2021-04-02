@@ -12,4 +12,7 @@
 #define WEAKSELF(weakSelf)                  __weak __typeof(&*self)weakSelf             = self;
 #define STRONGSELF(strongSelf)              __strong __typeof(&*weakSelf)strongSelf = weakSelf;
 
+typedef void(^LXIdBlock)(id value);
+typedef void(^LXBOOLBlock)(BOOL result);
+
 #endif /* Define_h */

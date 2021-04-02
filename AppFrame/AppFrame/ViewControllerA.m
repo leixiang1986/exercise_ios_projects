@@ -25,7 +25,44 @@
     button.backgroundColor = [UIColor whiteColor];
     [button addTarget:self action:@selector(buttonClick:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.view addSubview:button];
+    
+    [self test];
+    
 }
+
+///测试入口
+- (void)test {
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    [self asyncMethodWithType:3 complete:^{
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    [self asyncMethodWithType:2 complete:^{
+        dispatch_semaphore_signal(semaphore);
+    }];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    NSLog(@"最后执行");
+}
+
+
+/// 异步方法
+/// @param type 类型
+/// @param complete 完成回调
+- (void)asyncMethodWithType:(NSInteger)type complete:(void(^)(void))complete {
+    NSLog(@"执行类型%ld",type);
+    if (type <= 0) {
+        complete();
+        return ;
+    }
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        ///模拟之行任务
+        [NSThread sleepForTimeInterval:(arc4random() % 3 + 1) / 10];
+        !complete ?: complete();
+    });
+}
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
