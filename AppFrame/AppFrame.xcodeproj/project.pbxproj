@@ -10,6 +10,7 @@
 		048FB82A21B77D900097DC9A /* VCBPresentVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FB82921B77D900097DC9A /* VCBPresentVCViewController.m */; };
 		835407BADC3DDA144847A448 /* libPods-AppFrameUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B85BE1FE0CAE17F188E4F3 /* libPods-AppFrameUITests.a */; };
 		A22D6E8C5ABE62F1CCEF5D6A /* libPods-AppFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F94D40D163CE1ED9560701 /* libPods-AppFrame.a */; };
+		D33A2A95261FFE4800490DBB /* NSObject+Dealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = D33A2A93261FFE4800490DBB /* NSObject+Dealloc.m */; };
 		D34E8577261460E900A93A7F /* UMPAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D34E8576261460E900A93A7F /* UMPAsyncOperation.m */; };
 		D38F26C321A7B84D0002FBA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F26C221A7B84D0002FBA3 /* AppDelegate.m */; };
 		D38F26C621A7B84D0002FBA3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F26C521A7B84D0002FBA3 /* ViewController.m */; };
@@ -53,6 +54,8 @@
 		3517AE92F2ECF3399B7C31F8 /* Pods-AppFrameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFrameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppFrameUITests/Pods-AppFrameUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D5394A5901FE38C2D1D3B34 /* Pods-AppFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFrame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppFrame/Pods-AppFrame.debug.xcconfig"; sourceTree = "<group>"; };
 		9F294BC7ADEFADAF0F5912DA /* Pods-AppFrameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFrameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppFrameUITests/Pods-AppFrameUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D33A2A93261FFE4800490DBB /* NSObject+Dealloc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Dealloc.m"; sourceTree = "<group>"; };
+		D33A2A94261FFE4800490DBB /* NSObject+Dealloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Dealloc.h"; sourceTree = "<group>"; };
 		D33EA5652609CCFC008B4710 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		D34E8575261460E900A93A7F /* UMPAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMPAsyncOperation.h; sourceTree = "<group>"; };
 		D34E8576261460E900A93A7F /* UMPAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMPAsyncOperation.m; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 		D3CCB82D260989CC0086D063 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				D33A2A94261FFE4800490DBB /* NSObject+Dealloc.h */,
+				D33A2A93261FFE4800490DBB /* NSObject+Dealloc.m */,
 				D3CCB82E260989E60086D063 /* UIImage+Extension.h */,
 				D3CCB82F260989E60086D063 /* UIImage+Extension.m */,
 				D3CCB83326098D9B0086D063 /* UIColor+Extension.h */,
@@ -417,6 +422,7 @@
 				D38F26F621A7CEF20002FBA3 /* ViewControllerC.m in Sources */,
 				D38F26ED21A7B9B50002FBA3 /* CustomTabbarController.m in Sources */,
 				D3E7D730260B1257004EDC4E /* UMPProtocolModel.m in Sources */,
+				D33A2A95261FFE4800490DBB /* NSObject+Dealloc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
