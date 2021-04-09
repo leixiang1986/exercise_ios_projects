@@ -17,6 +17,7 @@
 		D3257A5D21A4020900638C19 /* TestViewA.m in Sources */ = {isa = PBXBuildFile; fileRef = D3257A5C21A4020900638C19 /* TestViewA.m */; };
 		D3257A6021A4021600638C19 /* TestViewB.m in Sources */ = {isa = PBXBuildFile; fileRef = D3257A5F21A4021600638C19 /* TestViewB.m */; };
 		D3257A6321A4022300638C19 /* TestViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = D3257A6221A4022300638C19 /* TestViewC.m */; };
+		D33A2A9E2620010600490DBB /* TestBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D33A2A9D2620010600490DBB /* TestBaseView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		D3257A5F21A4021600638C19 /* TestViewB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewB.m; sourceTree = "<group>"; };
 		D3257A6121A4022300638C19 /* TestViewC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewC.h; sourceTree = "<group>"; };
 		D3257A6221A4022300638C19 /* TestViewC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewC.m; sourceTree = "<group>"; };
+		D33A2A9C2620010600490DBB /* TestBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBaseView.h; sourceTree = "<group>"; };
+		D33A2A9D2620010600490DBB /* TestBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBaseView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				D3257A3821A401F400638C19 /* AppDelegate.m */,
 				D3257A3A21A401F400638C19 /* ViewController.h */,
 				D3257A3B21A401F400638C19 /* ViewController.m */,
+				D33A2A9C2620010600490DBB /* TestBaseView.h */,
+				D33A2A9D2620010600490DBB /* TestBaseView.m */,
 				D3257A5B21A4020900638C19 /* TestViewA.h */,
 				D3257A5C21A4020900638C19 /* TestViewA.m */,
 				D3257A5E21A4021600638C19 /* TestViewB.h */,
@@ -221,6 +226,7 @@
 				D3257A3C21A401F400638C19 /* ViewController.m in Sources */,
 				D3257A4721A401F600638C19 /* main.m in Sources */,
 				D3257A6321A4022300638C19 /* TestViewC.m in Sources */,
+				D33A2A9E2620010600490DBB /* TestBaseView.m in Sources */,
 				D3257A5D21A4020900638C19 /* TestViewA.m in Sources */,
 				D3257A3921A401F400638C19 /* AppDelegate.m in Sources */,
 				D3257A6021A4021600638C19 /* TestViewB.m in Sources */,
