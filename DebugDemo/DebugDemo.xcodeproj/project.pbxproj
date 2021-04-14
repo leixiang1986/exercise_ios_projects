@@ -17,6 +17,7 @@
 		D33A2B052620326200490DBB /* ToDeallocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D33A2B042620326200490DBB /* ToDeallocViewController.m */; };
 		D33A2B09262032AA00490DBB /* ManagerA.m in Sources */ = {isa = PBXBuildFile; fileRef = D33A2B08262032AA00490DBB /* ManagerA.m */; };
 		D33A2B0D262033F900490DBB /* ManagerB.m in Sources */ = {isa = PBXBuildFile; fileRef = D33A2B0C262033F900490DBB /* ManagerB.m */; };
+		D33A2B362623D88600490DBB /* UITableViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D33A2B352623D88600490DBB /* UITableViewCell+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		D33A2B08262032AA00490DBB /* ManagerA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManagerA.m; sourceTree = "<group>"; };
 		D33A2B0B262033F900490DBB /* ManagerB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerB.h; sourceTree = "<group>"; };
 		D33A2B0C262033F900490DBB /* ManagerB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManagerB.m; sourceTree = "<group>"; };
+		D33A2B342623D88600490DBB /* UITableViewCell+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Extension.h"; sourceTree = "<group>"; };
+		D33A2B352623D88600490DBB /* UITableViewCell+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +79,8 @@
 				D33A2AED2620324500490DBB /* SceneDelegate.m */,
 				D33A2AEF2620324500490DBB /* ViewController.h */,
 				D33A2AF02620324500490DBB /* ViewController.m */,
-				D33A2B032620326200490DBB /* ToDeallocViewController.h */,
-				D33A2B042620326200490DBB /* ToDeallocViewController.m */,
-				D33A2B07262032AA00490DBB /* ManagerA.h */,
-				D33A2B08262032AA00490DBB /* ManagerA.m */,
-				D33A2B0B262033F900490DBB /* ManagerB.h */,
-				D33A2B0C262033F900490DBB /* ManagerB.m */,
+				D33A2B332623D80800490DBB /* Common */,
+				D33A2B312623D6E000490DBB /* toDealloc */,
 				D33A2AF22620324500490DBB /* Main.storyboard */,
 				D33A2AF52620324800490DBB /* Assets.xcassets */,
 				D33A2AF72620324800490DBB /* LaunchScreen.storyboard */,
@@ -89,6 +88,28 @@
 				D33A2AFB2620324800490DBB /* main.m */,
 			);
 			path = DebugDemo;
+			sourceTree = "<group>";
+		};
+		D33A2B312623D6E000490DBB /* toDealloc */ = {
+			isa = PBXGroup;
+			children = (
+				D33A2B032620326200490DBB /* ToDeallocViewController.h */,
+				D33A2B042620326200490DBB /* ToDeallocViewController.m */,
+				D33A2B07262032AA00490DBB /* ManagerA.h */,
+				D33A2B08262032AA00490DBB /* ManagerA.m */,
+				D33A2B0B262033F900490DBB /* ManagerB.h */,
+				D33A2B0C262033F900490DBB /* ManagerB.m */,
+			);
+			path = toDealloc;
+			sourceTree = "<group>";
+		};
+		D33A2B332623D80800490DBB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D33A2B342623D88600490DBB /* UITableViewCell+Extension.h */,
+				D33A2B352623D88600490DBB /* UITableViewCell+Extension.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +188,7 @@
 				D33A2AEE2620324500490DBB /* SceneDelegate.m in Sources */,
 				D33A2B09262032AA00490DBB /* ManagerA.m in Sources */,
 				D33A2B0D262033F900490DBB /* ManagerB.m in Sources */,
+				D33A2B362623D88600490DBB /* UITableViewCell+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
