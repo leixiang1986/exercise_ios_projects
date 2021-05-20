@@ -31,6 +31,7 @@
 //    bar.shadowImage = [UIImage dt_imageWithColor:UIColorFromHex(kCOLOR_E2E2E2)];
     /*导航栏背景色*/
     [bar setBackgroundImage:[UIImage imageWithColor:[UIColor blueColor]] forBarMetrics:UIBarMetricsDefault];
+    ///返回按钮颜色
     [bar setTintColor:[UIColor whiteColor]];
     [bar setBarTintColor:[UIColor whiteColor]];
     // 设置导航栏标题文字
