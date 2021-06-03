@@ -28,10 +28,6 @@
     self.testView.layer.position = point;
     
     self.testView.layer.transform = CATransform3DMakeRotation(0.5, 0, 0, 1);
-    
-    
-    
-    
 }
 
 
