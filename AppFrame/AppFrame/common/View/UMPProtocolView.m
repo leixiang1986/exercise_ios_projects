@@ -50,35 +50,38 @@
     if (protocolModel == nil) {
         return;
     }
-    NSArray *items = protocolModel.items;
-    UMPProtocolBox *box = protocolModel.box;
+    UITextField *textField ;
     
-    NSMutableAttributedString *attributesStr = [[NSMutableAttributedString alloc] init];
     
-    if (box) {
-        NSAttributedString *boxAttrStr = [self attributeStrWithBox:box];
-        if (boxAttrStr) {
-            [attributesStr appendAttributedString:boxAttrStr];
-            [attributesStr addAttributes:@{NSLinkAttributeName:@"box://"} range:NSMakeRange(0, boxAttrStr.length)];
-        }
-    }
-    [attributesStr appendString:@" "];
-    for (NSInteger i = 0; i < items.count;i++) {
-        UMPProtocolItem *item = items[i];
-        NSAttributedString *protocolAttriStr = [self attributeStrWithItem:item];
-        if (protocolAttriStr == nil) {
-            continue;
-        }
-        [attributesStr appendAttributedString:protocolAttriStr];
-        NSString *linkName = [NSString stringWithFormat:@"protocol_%ld://",(long)i];
-        NSRange range = [attributesStr.string rangeOfString:item.nameWithsymbol];
-        [attributesStr addAttributes:@{NSLinkAttributeName:linkName} range:range];
-    }
-    NSMutableParagraphStyle *muParagraph = [[NSMutableParagraphStyle alloc]init];
-        muParagraph.headIndent = 18; //
-    muParagraph.lineSpacing = 6;
-    [attributesStr setAttribute:NSParagraphStyleAttributeName value:muParagraph];
-    self.textView.attributedText = attributesStr;
+//    NSArray *items = protocolModel.items;
+//    UMPProtocolBox *box = protocolModel.box;
+//    
+//    NSMutableAttributedString *attributesStr = [[NSMutableAttributedString alloc] init];
+//    
+//    if (box) {
+//        NSAttributedString *boxAttrStr = [self attributeStrWithBox:box];
+//        if (boxAttrStr) {
+//            [attributesStr appendAttributedString:boxAttrStr];
+//            [attributesStr addAttributes:@{NSLinkAttributeName:@"box://"} range:NSMakeRange(0, boxAttrStr.length)];
+//        }
+//    }
+//    [attributesStr appendString:@" "];
+//    for (NSInteger i = 0; i < items.count;i++) {
+//        UMPProtocolItem *item = items[i];
+//        NSAttributedString *protocolAttriStr = [self attributeStrWithItem:item];
+//        if (protocolAttriStr == nil) {
+//            continue;
+//        }
+//        [attributesStr appendAttributedString:protocolAttriStr];
+//        NSString *linkName = [NSString stringWithFormat:@"protocol_%ld://",(long)i];
+//        NSRange range = [attributesStr.string rangeOfString:item.nameWithsymbol];
+//        [attributesStr addAttributes:@{NSLinkAttributeName:linkName} range:range];
+//    }
+//    NSMutableParagraphStyle *muParagraph = [[NSMutableParagraphStyle alloc]init];
+//        muParagraph.headIndent = 18; //
+//    muParagraph.lineSpacing = 6;
+//    [attributesStr setAttribute:NSParagraphStyleAttributeName value:muParagraph];
+//    self.textView.attributedText = attributesStr;
 }
 
 ///box模型转属性文字

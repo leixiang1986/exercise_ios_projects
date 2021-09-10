@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'URLDemo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for URLDemo
+pod 'Protobuf' , '3.11.4'
+pod 'YYKit'
+  target 'URLDemoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'URLDemoUITests' do
+    # Pods for testing
+  end
+
+end

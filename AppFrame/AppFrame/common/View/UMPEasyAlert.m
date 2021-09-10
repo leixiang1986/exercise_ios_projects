@@ -42,14 +42,14 @@
                                   confirm:(nullable UMPVoidBlock)confirmBlock {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:content preferredStyle:(UIAlertControllerStyleAlert)];
     
-    NSString *cancelStr = cancelTitle.length ? cancelTitle : Klocalize(@"cancelTitle");
+    NSString *cancelStr = cancelTitle.length ? cancelTitle : @"取消";
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:cancelStr style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
         if (cancelBlock) {
             cancelBlock();
         }
     }];
     
-    NSString *confirmStr = confirmTitle.length ? confirmTitle : Klocalize(@"OK");
+    NSString *confirmStr = confirmTitle.length ? confirmTitle : @"确定";
     UIAlertAction *confirm = [UIAlertAction actionWithTitle:confirmStr style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         if (confirmBlock) {
             confirmBlock();
@@ -63,7 +63,7 @@
         [alert addAction:confirm];
     }
     
-    [[WakeApp getCurrentController] presentViewController:alert animated:YES completion:nil];
+//    [[WakeApp getCurrentController] presentViewController:alert animated:YES completion:nil];
     return alert;
 }
 

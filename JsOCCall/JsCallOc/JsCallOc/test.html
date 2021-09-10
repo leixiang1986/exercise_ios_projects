@@ -1,0 +1,40 @@
+<html>
+    <header>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript">
+            
+            function secondClick() {
+<!--                <!--                share('分享的标题','分享的内容','图片地址');-->-->
+<!--                console.log('惦记了');-->
+<!--                alert('tset alert');-->
+<!--<!--                window.webkit.messageHandlers.removeNavigationBar.postMessage('remove navigationBar');-->-->
+        window.location.href="itms-services://?action=download-manifest&url=https://obs-test-1302584174.cos.ap-guangzhou.myqcloud.com/app/dvip/MobileOffice_iphone.plist";
+    
+
+            }
+            function showAlert(message){
+            alert(message);
+        }
+        
+        function thirdClick(){
+            console.log('惦记了');
+            window.webkit.messageHandlers.AddNavigationBar.postMessage('add navigationBar');
+        }
+        
+            </script>
+    </header>
+    
+    <body  bgcolor="green">
+        <h2> 这里是第二种方式 </h2>
+        <br/>
+        <br/>
+        <button type="button" onclick="secondClick()">Click Me!</button>
+        <button type="button" onclick="thirdClick()">ThirdClick!</button>
+<!--        <a href="iosamap://myLocation?sourceApplication=applicationName">高德地图</a>-->
+        <hr/>
+<!--        <a href="iosamap://">高德地图</a>-->
+<!--        <a  href="https://uri.amap.com/marker?position=116.473195,39.993253">跳转高德地图</a>-->
+        <hr>
+        <a target="blank" href="itms-services://?action=download-manifest&url=https://obs-test-1302584174.cos.ap-guangzhou.myqcloud.com/app/dvip/MobileOffice_iphone.plist">高德地图</a>
+    </body>
+</html>

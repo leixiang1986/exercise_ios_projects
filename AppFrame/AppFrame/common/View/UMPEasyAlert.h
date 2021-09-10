@@ -6,9 +6,12 @@
 //  Copyright © 2021 UMP. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
+typedef void(^UMPVoidBlock)(void);
+
 ///alter的便利访问方式
 @interface UMPEasyAlert : NSObject
 

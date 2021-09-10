@@ -1,0 +1,22 @@
+PODS:
+  - Protobuf (3.11.4)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - Protobuf (= 3.11.4)
+  - YYKit
+
+SPEC REPOS:
+  trunk:
+    - Protobuf
+    - YYKit
+
+SPEC CHECKSUMS:
+  Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: fc64ef615e2490ce409ad2a4d9c50248d9ebf64e
+
+COCOAPODS: 1.10.0.rc.1

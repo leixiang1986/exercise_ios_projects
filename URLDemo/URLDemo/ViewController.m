@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SecondViewController.h"
 
 //From AFN
 NSString * AFPercentEscapedStringFromString(NSString *string) {
@@ -44,6 +45,7 @@ NSString * AFPercentEscapedStringFromString(NSString *string) {
 
 @interface ViewController ()<NSURLConnectionDataDelegate>
 @property (nonatomic, strong) NSURLConnection *connection;
+@property (nonatomic, strong) NSMutableString *internalName;
 @end
 
 @implementation ViewController
@@ -52,11 +54,57 @@ NSString * AFPercentEscapedStringFromString(NSString *string) {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com/asdfj?abc=123&def=456#12"];
+    NSLog(@"%@---%@---%@",url.absoluteString,url.query,url.fragment);
+    _internalName = [[NSMutableString alloc] initWithString:@"123"];
+    self.name = _internalName;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notify) name:@"testNotify" object:nil];
+    
+    
+    for (NSInteger i = 0; i < 10; i++) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(i + 1 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotify" object:nil];
+        });
+    }
+    
+    
+//    dispatch_queue_t queue = dispatch_queue_create("test", DISPATCH_QUEUE_CONCURRENT);
+//    NSLog(@"111:%@",[NSThread currentThread]);
+//    dispatch_async(queue, ^{
+//        NSLog(@"222:%@",[NSThread currentThread]);
+//        dispatch_sync(queue, ^{
+//            NSLog(@"333:%@",[NSThread currentThread]);
+//        });
+//        NSLog(@"444:%@",[NSThread currentThread]);
+//    });
+//    NSLog(@"555:%@",[NSThread currentThread]);
     
 }
 
+- (void)setName:(NSMutableString *)name {
+    _name = [name copy];
+}
+
+- (void)notify {
+    
+    NSLog(@"-----%@",[NSThread currentThread]);
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self test];
+    
+    static int i = 0;
+    if (i % 2 == 0) {
+        SecondViewController *vc = [[SecondViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotify" object:nil];
+    }
+    i++;
+    
+//    self.name = self.internalName;
+//    [self.internalName appendString:@"456"];
+//    NSLog(@"%@---%@",self.internalName,self.name);
+    
 }
 
 
@@ -65,21 +113,42 @@ NSString * AFPercentEscapedStringFromString(NSString *string) {
 - (void)test {
 //    NSString *urlString = @"http://www.baidu.com?image#/小刘.png";
 ////    urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    NSString *urlString = @"http://127.0.0.1/test/#first.txt";
+//    NSString *urlString = @"http://127.0.0.1/test/#first.txt";
+//
+//    NSURL *url = [NSURL URLWithString:urlString];
+//    NSLog(@"host:%@--scheme:%@---%@",url.host,url.scheme,url.path);
+//
     
-    NSString *tempUrlString = [urlString copy];
-    urlString = AFPercentEscapedStringFromString(urlString);
     
-    NSLog(@"进行编码过后:%@",urlString);
-    urlString = [urlString stringByRemovingPercentEncoding];
-    NSLog(@"进行解码过后:%@",urlString);
+   
+    
+    
+    dispatch_queue_t queue = dispatch_queue_create("test", DISPATCH_QUEUE_CONCURRENT);
+    NSLog(@"111:%@",[NSThread currentThread]);
+
+    dispatch_async(queue, ^{
+        NSLog(@"2222:%@",[NSThread currentThread]);
+        dispatch_sync(queue, ^{
+            NSLog(@"333:%@",[NSThread currentThread]);
+        });
+        NSLog(@"4444:%@",[NSThread currentThread]);
+    });
+    
+    NSLog(@"5555:%@",[NSThread currentThread]);
+    
+//    NSString *tempUrlString = [urlString copy];
+//    urlString = AFPercentEscapedStringFromString(urlString);
+//
+//    NSLog(@"进行编码过后:%@",urlString);
+//    urlString = [urlString stringByRemovingPercentEncoding];
+//    NSLog(@"进行解码过后:%@",urlString);
 
     //用编码方式可以请求到数据，如果不编码就请求不到
-    urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-//    urlString = AFPercentEscapedStringFromString(urlString);
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+//    urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+////    urlString = AFPercentEscapedStringFromString(urlString);
+//    NSURL *url = [NSURL URLWithString:urlString];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
     
 }
 

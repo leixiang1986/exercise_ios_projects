@@ -32,7 +32,9 @@
     }
     NSURL *url = [NSURL fileURLWithPath:path];
     NSArray *items = @[data,url];
+    
     UIActivityViewController *vc = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
+    vc.excludedActivityTypes
     vc.completionWithItemsHandler = ^(UIActivityType __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError) {
         NSLog(@"分享后:%@--%@",returnedItems,activityError);
     };

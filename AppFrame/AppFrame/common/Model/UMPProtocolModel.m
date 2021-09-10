@@ -7,6 +7,7 @@
 //
 
 #import "UMPProtocolModel.h"
+#import "UIColor+Extension.h"
 
 @implementation UMPProtocolItem
 
@@ -19,25 +20,21 @@
 
 - (UIColor *)preDesColor {
     if (!_preDesColor) {
-        _preDesColor = [UIColor hexStringToColor:@"333333"];
+        _preDesColor = [UIColor colorWithHexString:@"333333"];
     }
     return _preDesColor;
 }
 
 - (UIColor *)protocolColor {
     if (!_protocolColor) {
-        _protocolColor = Theme_color;
+        _protocolColor = [UIColor colorWithHexString:@"FF0000"];
     }
     return _protocolColor;
 }
 
 - (NSString *)nameWithsymbol {
     if (_name.length) {
-        if ([ZBLocalized sharedInstance].currentLanguageType == UMPLanguageType_SimpleChinese || [ZBLocalized sharedInstance].currentLanguageType == UMPLanguageType_TraditionalChinese) {
-            return [NSString stringWithFormat:@"《%@》",_name];
-        } else {
-            return [NSString stringWithFormat:@"<%@>",_name];
-        }
+        return [NSString stringWithFormat:@"《%@》",_name];
     } else {
         return @"";
     }

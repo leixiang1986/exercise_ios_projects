@@ -61,7 +61,7 @@
         !click ?: click();
         return;
     }
-    [UMPEasyAlert showAlertWithTitle:Klocalize(@"Tips") content:msg cancel:nil confirm:^{
+    [UMPEasyAlert showAlertWithTitle:@"提示" content:msg cancel:nil confirm:^{
         !click ?: click();
     }];
 }
@@ -70,9 +70,9 @@
 /// @param type 多媒体权限的类型
 + (NSString *)mediaNoAuthorizationMessageOfType:(AVMediaType)type {
     if ([type isEqualToString:AVMediaTypeVideo]) {
-        return Klocalize(@"必须允许访问相机权限才能进入视频，请前往设置->隐私->相机中打开");
+        return @"必须允许访问相机权限才能进入视频，请前往设置->隐私->相机中打开";
     } else if ([type isEqualToString:AVMediaTypeAudio]) {
-        return Klocalize(@"必须允许访问麦克风权限才能进入视频，请前往设置->隐私->麦克风中打开");
+        return @"必须允许访问麦克风权限才能进入视频，请前往设置->隐私->麦克风中打开";
     }
     return @"";
 }
