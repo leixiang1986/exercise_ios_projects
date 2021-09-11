@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    _titles = @[@"uicollectionCell自适应宽高"];
+    _titles = @[@"uicollectionCell自适应宽高",@"DecorationView"];
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:(UITableViewStylePlain)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -59,6 +59,8 @@
     if (indexPath.row == 0) {
         AutoSizingCellViewController *vc = [[AutoSizingCellViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 1) {
+        
     }
     
 }

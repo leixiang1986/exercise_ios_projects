@@ -60,7 +60,7 @@ NSString * AFPercentEscapedStringFromString(NSString *string) {
     self.name = _internalName;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notify) name:@"testNotify" object:nil];
     
-    
+    ///发送的线程和接收的线程相同
     for (NSInteger i = 0; i < 10; i++) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(i + 1 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
             [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotify" object:nil];
