@@ -18,6 +18,8 @@
 		04529BBF201DB90F00A5C5B1 /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04529BBE201DB90F00A5C5B1 /* WKWebViewController.m */; };
 		04529BC1201DFED600A5C5B1 /* Example2.html in Resources */ = {isa = PBXBuildFile; fileRef = 04529BC0201DFED600A5C5B1 /* Example2.html */; };
 		04529BC4201E0C0600A5C5B1 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 04529BC3201E0C0500A5C5B1 /* test.html */; };
+		0473EABA26EC8EEE0066C855 /* LXJSMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0473EAB926EC8EEE0066C855 /* LXJSMessageModel.m */; };
+		0473EAC026EC99630066C855 /* LXScriptMessageHandler+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 0473EABF26EC99630066C855 /* LXScriptMessageHandler+Test.m */; };
 		0475226F26D5EFC300FFB1D0 /* LXScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0475226E26D5EFC300FFB1D0 /* LXScriptMessageHandler.m */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,10 @@
 		04529BBE201DB90F00A5C5B1 /* WKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
 		04529BC0201DFED600A5C5B1 /* Example2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Example2.html; sourceTree = "<group>"; };
 		04529BC3201E0C0500A5C5B1 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		0473EAB826EC8EEE0066C855 /* LXJSMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXJSMessageModel.h; sourceTree = "<group>"; };
+		0473EAB926EC8EEE0066C855 /* LXJSMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXJSMessageModel.m; sourceTree = "<group>"; };
+		0473EABE26EC99630066C855 /* LXScriptMessageHandler+Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LXScriptMessageHandler+Test.h"; sourceTree = "<group>"; };
+		0473EABF26EC99630066C855 /* LXScriptMessageHandler+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LXScriptMessageHandler+Test.m"; sourceTree = "<group>"; };
 		0475226D26D5EFC300FFB1D0 /* LXScriptMessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXScriptMessageHandler.h; sourceTree = "<group>"; };
 		0475226E26D5EFC300FFB1D0 /* LXScriptMessageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXScriptMessageHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +125,10 @@
 				04529BBE201DB90F00A5C5B1 /* WKWebViewController.m */,
 				0475226D26D5EFC300FFB1D0 /* LXScriptMessageHandler.h */,
 				0475226E26D5EFC300FFB1D0 /* LXScriptMessageHandler.m */,
+				0473EABE26EC99630066C855 /* LXScriptMessageHandler+Test.h */,
+				0473EABF26EC99630066C855 /* LXScriptMessageHandler+Test.m */,
+				0473EAB826EC8EEE0066C855 /* LXJSMessageModel.h */,
+				0473EAB926EC8EEE0066C855 /* LXJSMessageModel.m */,
 				04529BC3201E0C0500A5C5B1 /* test.html */,
 				04529BC0201DFED600A5C5B1 /* Example2.html */,
 				04529B91201DABE400A5C5B1 /* Main.storyboard */,
@@ -283,7 +293,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0473EABA26EC8EEE0066C855 /* LXJSMessageModel.m in Sources */,
 				04529B90201DABE400A5C5B1 /* ViewController.m in Sources */,
+				0473EAC026EC99630066C855 /* LXScriptMessageHandler+Test.m in Sources */,
 				04529B9B201DABE400A5C5B1 /* main.m in Sources */,
 				0475226F26D5EFC300FFB1D0 /* LXScriptMessageHandler.m in Sources */,
 				04529B8D201DABE400A5C5B1 /* AppDelegate.m in Sources */,

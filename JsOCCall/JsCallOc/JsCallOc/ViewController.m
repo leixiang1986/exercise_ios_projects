@@ -61,7 +61,8 @@
 
 
 - (void)next {
-    WKWebViewController *vc = [[WKWebViewController alloc] init];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"html"];
+    WKWebViewController *vc = [[WKWebViewController alloc] initWithFilePath:path];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

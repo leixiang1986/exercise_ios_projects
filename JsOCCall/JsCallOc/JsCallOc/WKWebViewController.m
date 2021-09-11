@@ -11,57 +11,65 @@
 #import "LXScriptMessageHandler.h"
 
 @interface WKWebViewController ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>
-@property (nonatomic, strong) WKWebView *webView;
+@property (nonatomic, strong) NSMutableArray *p_jsMsgHandlers;
+///内部默认的handler
+@property (nonatomic, strong) LXScriptMessageHandler *handler;
+@property (nonatomic,strong,readwrite) WKWebView *webView;
+@property (nonatomic, strong) NSString *filePath;
+@property (nonatomic, copy) NSString *urlString;
+
 @end
 
 @implementation WKWebViewController
 
+- (instancetype)initWithFilePath:(NSString *)filePath {
+    self = [super init];
+    if (self) {
+        _filePath = filePath;
+    }
+    return self;
+}
+
+- (instancetype)initWithUrlStr:(NSString *)urlStr {
+    self = [super init];
+    if (self) {
+        _urlString = urlStr;
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"WKWebView 调用原生";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"百度" style:(UIBarButtonItemStyleDone) target:self action:@selector(mapClick)];
-    WKUserContentController *userContentController = [[WKUserContentController alloc] init];
-//    [userContentController addScriptMessageHandler:self name:@"removeNavigationBar"];
-//    [userContentController addScriptMessageHandler:self name:@"AddNavigationBar"];//添加导航栏
-    LXScriptMessageHandler *handler1 = [[LXScriptMessageHandler alloc] init];
-    handler1.name = @"111";
-    LXScriptMessageHandler *handler2 = [[LXScriptMessageHandler alloc] init];
-    handler2.name = @"222";
-    [userContentController addScriptMessageHandler:handler2 name:@"removeNavigationBar"];
-    [userContentController addScriptMessageHandler:handler2 name:@"AddNavigationBar"];
-    
-    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-    configuration.userContentController = userContentController;
-    _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
-    _webView.navigationDelegate = self;
-    _webView.UIDelegate = self;
+
+    NSURL *url = nil;
     
     
-//    WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
-//    config.userContentController = [[WKUserContentController alloc] init];
-//    [config.userContentController addScriptMessageHandler:self name:@"app"];
-//    WKPreferences *preferences = [[WKPreferences alloc] init];
-//    preferences.javaScriptCanOpenWindowsAutomatically = YES;
-//    config.preferences = preferences;
-//    self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) configuration:config];
-//    self.webView.UIDelegate = self;
-//    self.webView.navigationDelegate = self;
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"html"];
+    if (_filePath.length) {
+        url = [NSURL fileURLWithPath:_filePath];
+    } else if (_urlString.length) {
+        url = [NSURL URLWithString:_urlString];
+    }
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    if (url == nil) {
+        return;
+    }
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];;
     [self.webView loadRequest:request];
     [self.view addSubview:self.webView];
     
-//    NSString *pageSource = @"<!DOCTYPE html><html><head><title>title</title></head><body><h1>My Mobile phone</h1><p>Please enter deatails</p><form name=\"feedback\" method=\"post\" action=\"mailto:you@site.com\"><!-- From elements will go in here --></form><form name=\"inputform\"> <input type=\"button\" onClick=\"submitButton('My Test Parameter')\" value=\"submit\"> </form></body></html>";
-//    [self.webView loadHTMLString:pageSource baseURL:nil];
     
     UIButton *btn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     btn.frame = CGRectMake(20, 300, 50, 40);
     btn.backgroundColor = [UIColor redColor];
     [btn addTarget:self action:@selector(runjs) forControlEvents:(UIControlEventTouchUpInside)];
     [self.view addSubview:btn];
+    
+    [self addJsMessageHandler:self.handler];
 }
 
 
@@ -96,16 +104,15 @@
 }
 
 
-- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
-    NSLog(@"js调用了:%@",message.name);
-    
-    
+- (void)addJsMessageHandler:(id<LXScriptMessageHandlerDelegate>)handler {
+    if (handler == nil) {
+        return;
+    }
+    handler.webView = self.webView;
+    handler.viewController = self;
+    [self.p_jsMsgHandlers addObject:handler];
+    [self.webView.configuration.userContentController addScriptMessageHandler:handler name:handler.name];
 }
-
-
-
-
-
 
 /*! @abstract Invoked when a main frame navigation starts.
  @param webView The web view invoking the delegate method.
@@ -201,6 +208,30 @@
 }
 
 
+- (NSMutableArray *)p_jsMsgHandlers {
+    if (!_p_jsMsgHandlers) {
+        _p_jsMsgHandlers = [[NSMutableArray alloc] init];
+    }
+    return _p_jsMsgHandlers;
+}
 
+- (LXScriptMessageHandler *)handler {
+    if (!_handler) {
+        _handler = [[LXScriptMessageHandler alloc] initWithHandlerName:@"js_handler"];
+    }
+    return _handler;
+}
+
+- (WKWebView *)webView {
+    if (!_webView) {
+        WKUserContentController *userContentController = [[WKUserContentController alloc] init];
+        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+        configuration.userContentController = userContentController;
+        _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
+        _webView.navigationDelegate = self;
+        _webView.UIDelegate = self;
+    }
+    return _webView;
+}
 
 @end
