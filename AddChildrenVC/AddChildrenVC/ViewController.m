@@ -35,8 +35,8 @@
     return NO;
 }
 
+///当前显示的控制器在父类将要显示时，调用子控制器的将要显示
 -(void) viewWillAppear:(BOOL)animated {
-//    [super viewWillAppear:animated];
     [self.curChildVC beginAppearanceTransition: YES animated: animated];
 }
  
@@ -53,6 +53,7 @@
     [self.curChildVC endAppearanceTransition];
 }
 
+///手动控制时也要处理下生命周期
 - (void)segmentClick:(id)sender {
     UISegmentedControl *seg = sender;
     UIViewController *old = self.curChildVC;
