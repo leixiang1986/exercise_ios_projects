@@ -7,8 +7,11 @@
 //
 
 #import "DecorationCollectionViewController.h"
+#import "DecorationCollectionFlowLayout.h"
+#import "DecorationCollectionHeaderView.h"
+#import "Define.h"
 
-@interface DecorationCollectionViewController ()
+@interface DecorationCollectionViewController ()<UICollectionViewDelegateFlowLayout>
 
 @end
 
@@ -16,17 +19,35 @@
 
 static NSString * const reuseIdentifier = @"Cell";
 
+
+- (instancetype)init {
+    DecorationCollectionFlowLayout *layout = [[DecorationCollectionFlowLayout alloc] init];
+    layout.itemSize = CGSizeMake(80, 110);
+    layout.minimumLineSpacing = 10;
+    layout.minimumInteritemSpacing = 10;
+    self = [super initWithCollectionViewLayout:layout];
+    if (self) {
+        self.view.backgroundColor = [UIColor whiteColor];
+        self.collectionView.backgroundColor = [UIColor whiteColor];
+        self.collectionView.contentInset = UIEdgeInsetsMake(20, 20, 20, 20);
+        layout.sectionInset = UIEdgeInsetsMake(0, 20, 20, 20);
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
-    
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"DecorationCollectionHeaderView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"DecorationCollectionHeaderView"];
     
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"UICollectionReusableView"];
     // Do any additional setup after loading the view.
 }
+
 
 /*
 #pragma mark - Navigation
@@ -56,6 +77,26 @@ static NSString * const reuseIdentifier = @"Cell";
     cell.backgroundColor = [UIColor colorWithRed:arc4random() % 255 / 255.0 green:arc4random() % 255 / 255.0 blue:arc4random() % 255 / 255.0 alpha:1];
     
     return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        DecorationCollectionHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"DecorationCollectionHeaderView" forIndexPath:indexPath];
+        return header;
+    } else {
+        UICollectionReusableView *footer = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"UICollectionReusableView" forIndexPath:indexPath];
+        return footer;
+    }
+    return nil;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    
+    return CGSizeMake(300, 50);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    return CGSizeMake(300, 40);
 }
 
 #pragma mark <UICollectionViewDelegate>

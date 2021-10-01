@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0423AD0A2668C96700F8EB7A /* CollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0423AD082668C96700F8EB7A /* CollectionViewHeader.m */; };
 		0423AD0B2668C96700F8EB7A /* CollectionViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0423AD092668C96700F8EB7A /* CollectionViewHeader.xib */; };
+		046C85C727069F54009C86B2 /* DecorationCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C85C527069F54009C86B2 /* DecorationCollectionViewCell.m */; };
+		046C85C827069F54009C86B2 /* DecorationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C85C627069F54009C86B2 /* DecorationCollectionViewCell.xib */; };
+		046C85CE2706A716009C86B2 /* DecorationCollectionFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C85CD2706A716009C86B2 /* DecorationCollectionFlowLayout.m */; };
+		046C85D82706ADDF009C86B2 /* DecorationCollectionViewDecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C85D72706ADDF009C86B2 /* DecorationCollectionViewDecorationView.m */; };
 		0472C6DE26EAEA7900156515 /* DecorationCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472C6DD26EAEA7900156515 /* DecorationCollectionViewController.m */; };
 		0472C6E526EAEAF700156515 /* DecorationCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472C6E326EAEAF700156515 /* DecorationCollectionHeaderView.m */; };
 		0472C6E626EAEAF700156515 /* DecorationCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0472C6E426EAEAF700156515 /* DecorationCollectionHeaderView.xib */; };
@@ -49,6 +53,14 @@
 		0423AD072668C96700F8EB7A /* CollectionViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewHeader.h; sourceTree = "<group>"; };
 		0423AD082668C96700F8EB7A /* CollectionViewHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewHeader.m; sourceTree = "<group>"; };
 		0423AD092668C96700F8EB7A /* CollectionViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewHeader.xib; sourceTree = "<group>"; };
+		046C85C427069F53009C86B2 /* DecorationCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecorationCollectionViewCell.h; sourceTree = "<group>"; };
+		046C85C527069F54009C86B2 /* DecorationCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DecorationCollectionViewCell.m; sourceTree = "<group>"; };
+		046C85C627069F54009C86B2 /* DecorationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecorationCollectionViewCell.xib; sourceTree = "<group>"; };
+		046C85CC2706A716009C86B2 /* DecorationCollectionFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecorationCollectionFlowLayout.h; sourceTree = "<group>"; };
+		046C85CD2706A716009C86B2 /* DecorationCollectionFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DecorationCollectionFlowLayout.m; sourceTree = "<group>"; };
+		046C85D22706AC80009C86B2 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		046C85D62706ADDF009C86B2 /* DecorationCollectionViewDecorationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecorationCollectionViewDecorationView.h; sourceTree = "<group>"; };
+		046C85D72706ADDF009C86B2 /* DecorationCollectionViewDecorationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DecorationCollectionViewDecorationView.m; sourceTree = "<group>"; };
 		0472C6DC26EAEA7900156515 /* DecorationCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecorationCollectionViewController.h; sourceTree = "<group>"; };
 		0472C6DD26EAEA7900156515 /* DecorationCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DecorationCollectionViewController.m; sourceTree = "<group>"; };
 		0472C6E226EAEAF700156515 /* DecorationCollectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecorationCollectionHeaderView.h; sourceTree = "<group>"; };
@@ -134,6 +146,13 @@
 			children = (
 				0472C6DC26EAEA7900156515 /* DecorationCollectionViewController.h */,
 				0472C6DD26EAEA7900156515 /* DecorationCollectionViewController.m */,
+				046C85C427069F53009C86B2 /* DecorationCollectionViewCell.h */,
+				046C85C527069F54009C86B2 /* DecorationCollectionViewCell.m */,
+				046C85C627069F54009C86B2 /* DecorationCollectionViewCell.xib */,
+				046C85CC2706A716009C86B2 /* DecorationCollectionFlowLayout.h */,
+				046C85CD2706A716009C86B2 /* DecorationCollectionFlowLayout.m */,
+				046C85D62706ADDF009C86B2 /* DecorationCollectionViewDecorationView.h */,
+				046C85D72706ADDF009C86B2 /* DecorationCollectionViewDecorationView.m */,
 				0472C6E226EAEAF700156515 /* DecorationCollectionHeaderView.h */,
 				0472C6E326EAEAF700156515 /* DecorationCollectionHeaderView.m */,
 				0472C6E426EAEAF700156515 /* DecorationCollectionHeaderView.xib */,
@@ -190,6 +209,7 @@
 				D308511921F5B26800B435A6 /* LaunchScreen.storyboard */,
 				D308511C21F5B26800B435A6 /* Info.plist */,
 				D308511D21F5B26800B435A6 /* main.m */,
+				046C85D22706AC80009C86B2 /* Define.h */,
 			);
 			path = UICollectionViewTest;
 			sourceTree = "<group>";
@@ -330,6 +350,7 @@
 			files = (
 				0423AD0B2668C96700F8EB7A /* CollectionViewHeader.xib in Resources */,
 				D308511B21F5B26800B435A6 /* LaunchScreen.storyboard in Resources */,
+				046C85C827069F54009C86B2 /* DecorationCollectionViewCell.xib in Resources */,
 				D39E577321FAE6ED009DF558 /* AutoSizingCollectionViewCell.xib in Resources */,
 				D308511821F5B26800B435A6 /* Assets.xcassets in Resources */,
 				D308511621F5B26600B435A6 /* Main.storyboard in Resources */,
@@ -427,9 +448,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046C85D82706ADDF009C86B2 /* DecorationCollectionViewDecorationView.m in Sources */,
 				D308511321F5B26600B435A6 /* ViewController.m in Sources */,
 				0472C6DE26EAEA7900156515 /* DecorationCollectionViewController.m in Sources */,
+				046C85CE2706A716009C86B2 /* DecorationCollectionFlowLayout.m in Sources */,
 				0423AD0A2668C96700F8EB7A /* CollectionViewHeader.m in Sources */,
+				046C85C727069F54009C86B2 /* DecorationCollectionViewCell.m in Sources */,
 				D39E576E21FAE3D5009DF558 /* AutoSizingCellViewController.m in Sources */,
 				D39E577221FAE6ED009DF558 /* AutoSizingCollectionViewCell.m in Sources */,
 				D308511E21F5B26800B435A6 /* main.m in Sources */,

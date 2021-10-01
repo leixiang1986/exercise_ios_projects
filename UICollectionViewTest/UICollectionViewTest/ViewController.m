@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AutoSizingCellViewController.h"
+#import "DecorationCollectionViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -52,6 +53,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
     return [[UIView alloc] init];
 }
 
@@ -60,7 +62,8 @@
         AutoSizingCellViewController *vc = [[AutoSizingCellViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row == 1) {
-        
+        DecorationCollectionViewController *vc = [[DecorationCollectionViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
 }
