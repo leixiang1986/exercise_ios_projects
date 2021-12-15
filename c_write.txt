@@ -1,0 +1,42 @@
+
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"write.txt" ofType:nil];
+    
+    
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSString *document = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    document = [document stringByAppendingString:@"/write.txt"];
+    const char *fileName = [document cStringUsingEncoding:NSUTF8StringEncoding];
+    const char *fromName = [path UTF8String];
+    FILE *toFile = fopen(fileName, "a+");
+    FILE *fromFile = fopen(fromName, "rb");
+    
+    if (fromFile == NULL ) {
+        NSLog(@"打开文件失败fromFile");
+        return;
+    } else {
+//        fseek(fromFile, 0, SEEK_END);
+//
+//        int size = ftell(fromFile);
+//        NSLog(@"from file size :%zi",size);
+//        fseek(fromFile, 0, SEEK_SET);
+    }
+    if (toFile == NULL) {
+        NSLog(@"打开文件失败tofile");
+        return;
+    }
+    int bufferSize = 1024;
+    Byte *buffer = (Byte *)malloc(bufferSize);
+    
+    NSInteger size = 0;
+    while (size < data.length) {
+        size_t readSize = fread(buffer, 1, bufferSize, fromFile);
+        if (readSize > 0) {
+            fwrite(buffer, 1, readSize, toFile);
+            size += readSize;
+        } else {
+            break;
+        }
+    }
+    NSLog(@"读取的大小:%zi--dataLenght:%zi",size,data.length);
+    fclose(fromFile);
+    fclose(toFile);
