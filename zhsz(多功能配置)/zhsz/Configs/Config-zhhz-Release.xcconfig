@@ -1,0 +1,10 @@
+//
+//  Config-zhhz-Release.xcconfig
+//  zhhz
+//
+//  Created by LeiXiang on 2022/1/4.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+Base_url = www.zhhz.release.com
