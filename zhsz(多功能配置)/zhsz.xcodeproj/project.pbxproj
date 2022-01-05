@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00724CBC638D385180D6E682 /* Pods_zhsz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F916C023185EE6D12D160D /* Pods_zhsz.framework */; };
 		046E85A52783D44A0055EBC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E85A42783D44A0055EBC7 /* AppDelegate.m */; };
 		046E85A82783D44A0055EBC7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E85A72783D44A0055EBC7 /* SceneDelegate.m */; };
 		046E85AB2783D44A0055EBC7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E85AA2783D44A0055EBC7 /* ViewController.m */; };
@@ -26,6 +27,7 @@
 		046E85E72783E1920055EBC7 /* Config-zhhz-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 046E85E62783E1920055EBC7 /* Config-zhhz-debug.xcconfig */; };
 		046E85EB2783E1AD0055EBC7 /* Config-zhhz-Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 046E85EA2783E1AD0055EBC7 /* Config-zhhz-Release.xcconfig */; };
 		046E85FD2783E5250055EBC7 /* zhhz-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 046E85FC2783E5240055EBC7 /* zhhz-Info.plist */; };
+		BF71E14D0288216EB0B0310E /* Pods_zhhz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6043BD2B1AAA0D223577E74E /* Pods_zhhz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,12 @@
 		046E85E62783E1920055EBC7 /* Config-zhhz-debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config-zhhz-debug.xcconfig"; sourceTree = "<group>"; };
 		046E85EA2783E1AD0055EBC7 /* Config-zhhz-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config-zhhz-Release.xcconfig"; sourceTree = "<group>"; };
 		046E85FC2783E5240055EBC7 /* zhhz-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "zhhz-Info.plist"; sourceTree = "<group>"; };
+		22F916C023185EE6D12D160D /* Pods_zhsz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zhsz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33E2ED896904058FD86FF588 /* Pods-zhhz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhhz.debug.xcconfig"; path = "Target Support Files/Pods-zhhz/Pods-zhhz.debug.xcconfig"; sourceTree = "<group>"; };
+		6043BD2B1AAA0D223577E74E /* Pods_zhhz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zhhz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		919F9AC9AB5AA4EE6416F65B /* Pods-zhsz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhsz.release.xcconfig"; path = "Target Support Files/Pods-zhsz/Pods-zhsz.release.xcconfig"; sourceTree = "<group>"; };
+		AD80D5E407C79D095F010AE0 /* Pods-zhsz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhsz.debug.xcconfig"; path = "Target Support Files/Pods-zhsz/Pods-zhsz.debug.xcconfig"; sourceTree = "<group>"; };
+		D232604CA0FF58C3B2AB89BB /* Pods-zhhz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhhz.release.xcconfig"; path = "Target Support Files/Pods-zhhz/Pods-zhhz.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00724CBC638D385180D6E682 /* Pods_zhsz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF71E14D0288216EB0B0310E /* Pods_zhhz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +83,8 @@
 			children = (
 				046E85A22783D44A0055EBC7 /* zhsz */,
 				046E85A12783D44A0055EBC7 /* Products */,
+				9A3AEDE17B5B479A30A1F9C6 /* Pods */,
+				F784067F1C62C5624B8330EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +129,26 @@
 			path = Configs;
 			sourceTree = "<group>";
 		};
+		9A3AEDE17B5B479A30A1F9C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33E2ED896904058FD86FF588 /* Pods-zhhz.debug.xcconfig */,
+				D232604CA0FF58C3B2AB89BB /* Pods-zhhz.release.xcconfig */,
+				AD80D5E407C79D095F010AE0 /* Pods-zhsz.debug.xcconfig */,
+				919F9AC9AB5AA4EE6416F65B /* Pods-zhsz.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F784067F1C62C5624B8330EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6043BD2B1AAA0D223577E74E /* Pods_zhhz.framework */,
+				22F916C023185EE6D12D160D /* Pods_zhsz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 046E85B92783D44D0055EBC7 /* Build configuration list for PBXNativeTarget "zhsz" */;
 			buildPhases = (
+				8A6002A64471592680E9881C /* [CP] Check Pods Manifest.lock */,
 				046E859C2783D44A0055EBC7 /* Sources */,
 				046E859D2783D44A0055EBC7 /* Frameworks */,
 				046E859E2783D44A0055EBC7 /* Resources */,
+				046E86022783E8A20055EBC7 /* ShellScript */,
+				28568ED9FB7D5B3C902EEE1C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 046E85C82783D4570055EBC7 /* Build configuration list for PBXNativeTarget "zhhz" */;
 			buildPhases = (
+				9DA9215090F9417329F0E9F7 /* [CP] Check Pods Manifest.lock */,
 				046E85BE2783D4570055EBC7 /* Sources */,
 				046E85C32783D4570055EBC7 /* Frameworks */,
 				046E85C42783D4570055EBC7 /* Resources */,
+				DE8F8FA244E1CF10A0ADE3D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,6 +250,104 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		046E86022783E8A20055EBC7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\n# 在终端输入tty命令，查看终端的\n";
+		};
+		28568ED9FB7D5B3C902EEE1C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zhsz/Pods-zhsz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zhsz/Pods-zhsz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zhsz/Pods-zhsz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A6002A64471592680E9881C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zhsz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DA9215090F9417329F0E9F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zhhz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE8F8FA244E1CF10A0ADE3D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zhhz/Pods-zhhz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zhhz/Pods-zhhz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zhhz/Pods-zhhz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		046E859C2783D44A0055EBC7 /* Sources */ = {
