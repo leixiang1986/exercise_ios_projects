@@ -41,9 +41,10 @@ static void *const kGlobalIdentifyKey = (void *)&kGlobalIdentifyKey;
 ///内部会在dispatch到_queue队列上执行，这样就会10个一组并发执行
 - (void)testWithoutQueue {
   for (NSInteger i = 0; i < 100; i++) {
-    dispatch_semaphore_wait(self->_semaphore, DISPATCH_TIME_FOREVER);
+    
     void (^block)(void) = ^ {
-      [NSThread sleepForTimeInterval:0.5];
+      dispatch_semaphore_wait(self->_semaphore, DISPATCH_TIME_FOREVER);
+      [NSThread sleepForTimeInterval:0.4];
       NSLog(@"%zi",i);
       dispatch_semaphore_signal(self->_semaphore);
     };
@@ -51,10 +52,10 @@ static void *const kGlobalIdentifyKey = (void *)&kGlobalIdentifyKey;
       block();
       NSLog(@"直接执行block");
     } else {
-      NSLog(@"dispatch 执行block");
+//      NSLog(@"dispatch 执行block");
       dispatch_async(self->_queue, block);
-      
     }
+//    NSLog(@"循环中的final line");
   }
 }
 
@@ -63,8 +64,8 @@ static void *const kGlobalIdentifyKey = (void *)&kGlobalIdentifyKey;
 - (void)testWithQueue {
   dispatch_async(_queue, ^{
     for (NSInteger i = 0; i < 100; i++) {
-      dispatch_semaphore_wait(self->_semaphore, DISPATCH_TIME_FOREVER);
       void (^block)(void) = ^ {
+        dispatch_semaphore_wait(self->_semaphore, DISPATCH_TIME_FOREVER);
         [NSThread sleepForTimeInterval:0.5];
         NSLog(@"%zi",i);
         dispatch_semaphore_signal(self->_semaphore);

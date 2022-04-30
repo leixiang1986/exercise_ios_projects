@@ -20,7 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSString *path = @"http://www.baidu.com/test#!@%";
+  NSArray *arr = @[@1];
+  NSLog(@"%ud",arr.count - 30);
+  if (arr.count - 30 > 0) {
+    arr[10];
+  }
+  
+  
+  NSString *path = @"http://www.baidu.com/test#!@%";
     NSURL *url = [NSURL URLWithString:path];
     path = [path stringByAddingPercentEncodingWithAllowedCharacters:[[NSCharacterSet characterSetWithCharactersInString:@"!#"] invertedSet]];
     NSLog(@"path:%@",path);
